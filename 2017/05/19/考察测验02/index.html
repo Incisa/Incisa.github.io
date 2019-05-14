@@ -1,0 +1,1629 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter/css?family=Lato:300,300italic,400,400italic,700,700italic|Architects Daughter:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="某培训机构的考试题第二弹（感谢不愿透露姓名的提供者）   盒模型 box-sizing doctype ie6 有的话按照content box来渲染，又有的话按照border box来渲染 z-index position inlinebox/block/inlineblock/flex   原型链 在对象的ownprop上访问不到某个prop的时候那就到对象的proto访问同名属性 a =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="考察测验（二）">
+<meta property="og:url" content="http://yoursite.com/2017/05/19/考察测验02/index.html">
+<meta property="og:site_name" content="Incisa&#39;s Note">
+<meta property="og:description" content="某培训机构的考试题第二弹（感谢不愿透露姓名的提供者）   盒模型 box-sizing doctype ie6 有的话按照content box来渲染，又有的话按照border box来渲染 z-index position inlinebox/block/inlineblock/flex   原型链 在对象的ownprop上访问不到某个prop的时候那就到对象的proto访问同名属性 a =">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-09T14:09:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="考察测验（二）">
+<meta name="twitter:description" content="某培训机构的考试题第二弹（感谢不愿透露姓名的提供者）   盒模型 box-sizing doctype ie6 有的话按照content box来渲染，又有的话按照border box来渲染 z-index position inlinebox/block/inlineblock/flex   原型链 在对象的ownprop上访问不到某个prop的时候那就到对象的proto访问同名属性 a =">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/19/考察测验02/">
+
+
+
+
+
+  <title> 考察测验（二） | Incisa's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Incisa's Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/19/考察测验02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Incisa">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Incisa's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                考察测验（二）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T09:45:12+08:00">
+                2017-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>某培训机构的考试题第二弹（<del>感谢不愿透露姓名的提供者</del>）</p>
+</blockquote>
+<ul>
+<li>盒模型<ul>
+<li>box-sizing</li>
+<li>doctype ie6 有的话按照content box来渲染，又有的话按照border box来渲染</li>
+<li>z-index</li>
+<li>position</li>
+<li>inlinebox/block/inlineblock/flex</li>
+</ul>
+</li>
+<li>原型链<ul>
+<li>在对象的ownprop上访问不到某个prop的时候那就到对象的<strong>proto</strong>访问同名属性</li>
+<li>a = new A()<ul>
+<li>a.<strong>proto</strong> === A.prototype</li>
+</ul>
+</li>
+<li>继承在js里就是用这两个特性实现的</li>
+</ul>
+</li>
+<li>闭包<ul>
+<li>从一个函数内部返回了一个在那个作用域内创建的函数</li>
+<li>外部（不一定是全局）有一个变量指向一个局部作用域内的函数</li>
+<li>在离开此作用域之后，只有这个函数能够操作此作用域内的变量</li>
+<li>这就实现了一定程度的封装</li>
+</ul>
+</li>
+<li>作用域链 scope chain<ul>
+<li>某段代码在访问某个变量时，首先在当前作用域访问</li>
+<li>如果访问不到，就在当前作用域的父作用域下访问</li>
+<li>还是访问不到，就在父父作用域下访问</li>
+<li>最终访问到全局作用域</li>
+</ul>
+</li>
+<li>Array.sort<ul>
+<li>[{},{},{}].sort((a,b) = {-/0/+})</li>
+<li>[{},{},{},’[Object object]’].sort()</li>
+<li>多级排序<ul>
+<li>[].sort(最低优先级).sort().sort(最高优先级)</li>
+<li>自己实现一个稳定的排序算法</li>
+<li>第三方库（例如lodash）</li>
+<li>_.sortBy/With</li>
+<li>_.sortByAll([], ‘sum’, ‘yunwen’, ‘shuxue’)</li>
+</ul>
+</li>
+<li>[].sort(_ =&gt; Math.radom() - 0.5)<ul>
+<li>洗牌算法</li>
+<li><a href="https://bost.ocks.org/mike/shuffle/compare.html" target="_blank" rel="noopener">https://bost.ocks.org/mike/shuffle/compare.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>事件流（即事件模型）顺序：捕获和冒泡<ul>
+<li>此处“流”的意思是事件对象从哪个元素到哪个元素的</li>
+<li>event passive mode</li>
+</ul>
+</li>
+<li>网址解析过程<ul>
+<li>可以从tcp层开始讲起，监听，连接，浏览器的解析</li>
+<li>百度fex团队写过一篇过于详细的文章，可作为参考</li>
+<li>解析网址的各个部分（协议，域名，端口，路径）<ul>
+<li>在hosts文件中查找域名对应的ip</li>
+<li>没有的话请求DNS<ul>
+<li>DNS是少有的基于UDP的协议，默认端口是53<ul>
+<li>速度快</li>
+<li>包体小</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>连接到服务器对应的端口（http80, http442）（ssh23）（FTP21,22）</li>
+<li>连接建立成功后，就发送http请求</li>
+<li>服务器收到请求后，会读取url，cookie</li>
+<li>从数据库中查询出相应的数据，读取模板，拼接html</li>
+<li>返回给浏览器（可以说很细）</li>
+<li>浏览器收到响应之后，通过Content-Type来决定如何渲染页面</li>
+<li>解析html，解析过程构建dom树（又可以说一大堆东西）</li>
+<li>解析过程中遇到了需要的外部资源（css，js，img），就会启动一个线程去下载响应的资源。但是一般浏览器针对同一服务器端口（即域）的并行下载数量为6到8个，这也就是为什么不少网站把图片，css等放在另一个域名上的原因</li>
+<li>css的下载是不会阻塞页面渲染的</li>
+<li>js的下载会阻塞<ul>
+<li>如果让js的下载也不阻塞页面render呢<ul>
+<li>defer，async</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>当css/图片下载完的时候，就需要渲染页面，会产生回流（会闪一下）<ul>
+<li>所以呢页面有时会白屏一小会，如果这个时间段css下载完成了，浏览器就一次性渲染，就不会产生闪烁了。</li>
+<li>另一种实践就是把首页首屏直接放在style标签中内联。<ul>
+<li>taobao.com</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果浏览器中有缓存，可能就不去下载了<ul>
+<li>304协商缓存，会发请求，可能会没有响应</li>
+<li>强缓存，只要过期时间没到，就不发请求</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>目录计算问题 ./a/b/../../../ac/../…</p>
+<ul>
+<li>化为最简形式</li>
+<li>面试者提了一个正则算法，多级../../的怎么优化没有考虑到</li>
+<li>解决方案<ul>
+<li>path.resolve() （只能在node中用）</li>
+<li>path.resolve由于是用纯js写的，所以可以直接用到浏览器中，node模块是直接可以用在浏览器中</li>
+<li>a = document.createElement(‘a’)</li>
+<li>a.href = path</li>
+<li>return a.href ,done!</li>
+<li>正则，’..’与其前面一个路径中和，然后一致找不到可中和项为止</li>
+<li>直接按照path.sep进行split，然后用一个栈搞定：<ul>
+<li>遇到一个内容就把他压入栈中，遇到’..’就把栈顶的元素弹出来，如果遇到’..’时栈为空，就什么也不做。拆分后的数组全部处理完就搞定了。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolive</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.split(<span class="string">"/"</span>).reduce(<span class="function">(<span class="params">arr,seg</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (seg ==<span class="string">'.'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((arr[arr.length - <span class="number">1</span>] != <span class="string">'..'</span> )|| (arr.length == <span class="number">0</span>)) &#123;</span><br><span class="line">      arr.pop()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      arr.push(seg)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (seg == <span class="string">'.'</span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    arr.push(seg)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">  &#125;,[]).join(<span class="string">'/'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>jQuery</p>
+<ul>
+<li>实现方式<ul>
+<li>rAF</li>
+<li>setTimeout</li>
+</ul>
+</li>
+<li>使用方式<ul>
+<li>$(el).animate({<br>prop:targetValue<br>prop2:’+=diffvalue’<br>},’fastnormal/slow/500’,callback)</li>
+<li>$(el).toggle/show/hide/slideToggle/slideDown/slideUp()</li>
+</ul>
+</li>
+<li>动画还爱问的问题<ul>
+<li>动画队列</li>
+<li>$(el).css({width:10,height:10}).animate({width:100}).animate({hight:100})</li>
+<li>前面的动画执行完才执行后面的动画。</li>
+<li>有一个选项可以选择模式，默认是队列模式。</li>
+<li>在animate函数增加第二个参数queue:false</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>服务器分辨不同的用户<ul>
+<li>就是想问cookie</li>
+<li>Set-Cookie:</li>
+<li>document.cookie = ‘cookie content’</li>
+<li>document.cookie -&gt; all cookies</li>
+<li>Cookies: all cookies</li>
+</ul>
+</li>
+<li>css文件标签<ul>
+<li><a href="a.pdf">下载</a></li>
+<li>[href$=.pdf]::after{content:url(pdf,gif);…}</li>
+</ul>
+</li>
+<li>事件代理/委托<ul>
+<li>原理：事件冒泡</li>
+<li>功能：节省内存</li>
+<li>让动态添加进来的节点也能够方便的响应事件</li>
+</ul>
+</li>
+<li>cookie和session<ul>
+<li>session</li>
+<li>sessionStorage 浏览器关闭就会清空</li>
+</ul>
+</li>
+<li>HTML和XHTML的区别<ul>
+<li>XHTML是按照XML的格式来写HTML，语法限制更加严格<ul>
+<li>必须双引号</li>
+<li>纸币和标签也必须有结束的斜杠<hr><br></li>
+<li><a @click="f()">click</a>可能就不符合xml规范了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>清除浮动/闭合浮动<ul>
+<li>清除浮动 针对浮动元素父元素的兄弟元素</li>
+<li>闭合浮动 针对浮动元素的父元素</li>
+</ul>
+</li>
+<li>Ajax<ul>
+<li>XMLHttpRequest</li>
+<li>$.ajax(url,{option})</li>
+<li>$.get/post/getScript/getJSON</li>
+<li>fetch(url,optain).then()<ul>
+<li>不能撤销</li>
+<li>默认不发cookie</li>
+</ul>
+</li>
+<li>http.request(url,option)</li>
+<li>xhr</li>
+<li>superagent/axious/request.js这些第三方库，在node和ajax下都封装一致<ul>
+<li>谢大喵鼎力推荐axious</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>jQuery扩展<ul>
+<li>jQuery.extend/Object.assign/_.assign</li>
+<li>jQuery工具函数</li>
+</ul>
+</li>
+<li>包装对象与原始对象，及之间的转换<ul>
+<li>wrapped.valueOf() -&gt; 原始类型</li>
+<li>Object(原始类型) -&gt; 包装类型</li>
+</ul>
+</li>
+<li>如何跨域<ul>
+<li>CORS</li>
+<li>JSONP</li>
+<li>代理（很少有网站这么做）</li>
+<li>iframe也可以跨域</li>
+<li>chrome.exe –disabled-web-security –user-data-dir=”c:/data”</li>
+</ul>
+</li>
+<li>类型判断 <ul>
+<li>typeof</li>
+<li>instanceof</li>
+<li>a.constructor<ul>
+<li>A.prototype.constructor === A</li>
+</ul>
+</li>
+<li>Object.prototype.toString.call(obj) -&gt; ‘[Object Array]’</li>
+</ul>
+</li>
+<li>css reset的作用和用途<ul>
+<li>reset.css<ul>
+<li>一般来说，reset是把元素弄成一样的</li>
+</ul>
+</li>
+<li>normalize.css<ul>
+<li>这个是把所有元素弄到在不同浏览器里一样就好了</li>
+<li>现在一般用这个方案</li>
+<li>可以看一下这个项目的源代码</li>
+</ul>
+</li>
+<li>Reset重置浏览器的css默认属性</li>
+<li>浏览器的品种不同，样式不同，然后重置，让他们统一</li>
+</ul>
+</li>
+<li>css3 flex布局玩转程度<ul>
+<li>flex froggy</li>
+<li>flex containter/item</li>
+<li>flex-basis/grow/shrink</li>
+<li>main/cross axis</li>
+</ul>
+</li>
+<li>css图像精灵（Image Sprites）<ul>
+<li>图像精灵是放入一张个单独的图片中的一系列图像</li>
+<li>包含大量图像的网页需要更长事件来下载，同时会生成多个服务器请求。</li>
+<li>使用图像精灵将减少服务器请求数量并且节约带宽</li>
+<li>现在更多用iconfont/svg解决</li>
+<li>在http2shidai ,sprite应该会淡出的</li>
+</ul>
+</li>
+<li>css中单位px，em，rem的区别<ul>
+<li>px像素（pixel）相对长度单位。像素px是相对于显示器屏幕分辨率而言的<ul>
+<li>大小取决于<ul>
+<li>屏幕的宏观尺寸</li>
+<li>操作系统的显示分辨率</li>
+<li>网页的放大倍数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>什么叫优雅降级和渐进增强<ul>
+<li>渐进增强 progressive enhancement: 针对低版本浏览器进行构建页面，保证最基本的功能，然后在针对高级浏览器进行效果，交互等改进和追加功能达到更好的用户体验。</li>
+</ul>
+</li>
+<li>如何消除一个数组里不重复的元素<ul>
+<li>数组去重<ul>
+<li>注意NaN与自己不相等</li>
+</ul>
+</li>
+<li>lodash.unique</li>
+</ul>
+</li>
+<li>如何将一个数组快速排序<ul>
+<li>排序稳定性问题</li>
+<li>直接调用sort还是自己实现</li>
+<li>是否考虑多级排序</li>
+</ul>
+</li>
+<li><p>对象复制</p>
+<ul>
+<li>深复制/拷贝<ul>
+<li>复制对象的属性及属性的属性一直到原始类型</li>
+</ul>
+</li>
+<li>潜复制/拷贝<ul>
+<li>只复制对象自己一层的属性<ul>
+<li>对数组来说，a.slice()即可</li>
+<li>对于对象来说，一次for in Own就可以了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>一般情况下用递归就可以了</li>
+<li>与isEqual差不多，只不过一个是递归对比，一个事递归复制</li>
+<li><p>注意循环引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;x: 1, y: 2&#125;</span><br><span class="line">a.z = a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面这种情况lodash的相关函数是可以搞定的</p>
+<ul>
+<li>Lodash.clone</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>描述一下cookies，sessionStorage和localStorage的区别？<ul>
+<li>cookie每次都会跟着请求发送，流量问题等</li>
+<li>sessionStorage与localStorage是存在浏览器中，由js去读取</li>
+<li>sessionStorage会在浏览器关闭时清空，localStorage这回一直等到你主动清空。</li>
+</ul>
+</li>
+<li>javascript事件不会事件冒泡以及委托机制<ul>
+<li>事件委托即事件代理</li>
+</ul>
+</li>
+<li>fiddler调试代理工具<ul>
+<li>fiddler本质上是一个http代理服务器</li>
+<li>他会经过它的所有tcp流量都捕获并显示出来，方便调试</li>
+</ul>
+</li>
+<li>行内元素有哪些？块级元素有哪些?<ul>
+<li>块级元素<ul>
+<li>div,p,h1,h2,h3,h4,from,ul</li>
+</ul>
+</li>
+<li>行内元素<ul>
+<li>a,b,br,i,span,input,select</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>css选择符有哪些？那些属性可以继承？<ul>
+<li>el</li>
+<li>.class</li>
+<li>#id</li>
+<li>[attr]</li>
+<li>[attr*^$~|=value]</li>
+<li>:hover:active:link:visited</li>
+<li>el.class#id[attr]:hover</li>
+<li>a b c d &gt; e &gt; f</li>
+<li>a ~ b</li>
+<li>a + b</li>
+<li>prop: inherit;</li>
+<li>默认继承的属性<ul>
+<li>color</li>
+<li>font</li>
+<li>line-height</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>清除浮动有哪些方式，比较好的是哪一种<ul>
+<li>.clearfix::after {clear:both;content:’’;display:block}</li>
+<li>overflow:hidden</li>
+</ul>
+</li>
+<li>css3实现圆角（border-radius），阴影（box-shadow）对文字加特效（text-shadow）</li>
+<li>响应式布局用什么实现？<ul>
+<li>media query</li>
+<li>block flow<ul>
+<li>min/max-width</li>
+</ul>
+</li>
+<li>flex</li>
+<li><meta name="viewport" content="width=device-width"></li>
+</ul>
+</li>
+<li>如何消除一个数组里面重复的元素？<ul>
+<li>uniqed = Array.from(new Set(arr)) //es6方法</li>
+</ul>
+</li>
+<li>添加，删除，替换，插入到某个节点的方法<ul>
+<li>obj.appendChild(child)</li>
+<li>obj.innersetBefore(oldChild,newChild)</li>
+<li>obj.replaceChild(oldChild,newChild)</li>
+<li>obj.removeChild(child)</li>
+</ul>
+</li>
+<li>split()/join()的区别<ul>
+<li>前者是切割成数组的形式，后者是将数组转换成字符串</li>
+</ul>
+</li>
+<li>this的指向<ul>
+<li>是由所在函数的调用方式决定的</li>
+</ul>
+</li>
+<li>“===”和”==”的不同<ul>
+<li>前者会自动转换类型，后者不会</li>
+</ul>
+</li>
+<li>如何阻止事件冒泡的默认机制<ul>
+<li>preventDefault()</li>
+<li>stopPropagation()</li>
+<li>return false</li>
+</ul>
+</li>
+<li>如何理解和应用js闭包</li>
+<li>同源策略<ul>
+<li>一段脚本只能读取来自于同以来元的窗口和文档的属性</li>
+<li>这里的同一来源指的是主机名，协议和端口号的组合</li>
+</ul>
+</li>
+<li>http状态吗有哪些？分别表示什么<ul>
+<li>100 101</li>
+<li>200 201</li>
+<li>301 302 304 307</li>
+<li>401 403 404</li>
+<li>500 501 502</li>
+</ul>
+</li>
+<li>网页打不开了，如何检查是哪的问题？<ul>
+<li>cmd打开 ping当前网站<ul>
+<li>是域名不存在，还是dns服务器没有连接上</li>
+</ul>
+</li>
+<li>打开控制台查看network,刷新页面<ul>
+<li>查看状态码，以及错误码(failed)</li>
+</ul>
+</li>
+<li>本地hosts是否更新</li>
+<li>network_error</li>
+<li>4xx/5xx</li>
+<li>首先要做的就是打开devtools然后查看network面板</li>
+</ul>
+</li>
+<li>jQuery熟悉程度，它由哪些模块组成，分别的作用？<ul>
+<li>DOM操作</li>
+<li>Ajax</li>
+<li>动画</li>
+<li>选择器</li>
+<li>属性操作</li>
+<li>内容筛选</li>
+<li>事件</li>
+<li>详情《锋利的JQ》一书中有介绍</li>
+</ul>
+</li>
+<li>你认为node可以用在哪些方面中，最近在用node做什么？<ul>
+<li>因为js有完全的网络，文件等的访问能力，理论上可以拿来做任何其他语言可以做的事情</li>
+<li>目前社区主要用来做<ul>
+<li>前端开发构建工具<ul>
+<li>grunt/gulp 任务运行期 task runner </li>
+<li>browserify/webpack 打包工具</li>
+<li>uglifyjs(混淆js代码)</li>
+</ul>
+</li>
+<li>高性能HTTP服务器<ul>
+<li>其实并没有nginx性能高</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>让自己成为全栈工程师（划掉）</li>
+</ul>
+</li>
+<li>前端的理解<ul>
+<li>把数据展现出来，有一些交互</li>
+<li>可以做网站，webapp</li>
+<li>前端工程化</li>
+</ul>
+</li>
+<li>行内元素如何设置高度？<ul>
+<li>设置成行内块元素</li>
+</ul>
+</li>
+<li>如何用js取到当前访问页面的url，如何从url中获取？之后的东西<ul>
+<li>location.href</li>
+<li>location.search<ul>
+<li>.href</li>
+<li>.hash</li>
+<li>.search</li>
+<li>host</li>
+<li>protocol</li>
+<li>.pathname</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>web安全<ul>
+<li>xss Cross Size Scripting 跨站式脚本 网页中执行了代码片段<ul>
+<li>防御手段：过滤，把有可能出现的脚本的位置转义</li>
+</ul>
+</li>
+<li>csrf Cross Site Request Forgery 跨站请求伪造 通过跨域的方式请求一个url<ul>
+<li>防御手段：用token来做验证，而token只能被同域的代码访问到</li>
+</ul>
+</li>
+<li>《Web前端黑客技术揭秘》</li>
+</ul>
+</li>
+<li>position的取值<ul>
+<li>absolute 绝对定位</li>
+<li>relative 相对定位</li>
+<li>fixed 固定定位</li>
+<li>sticky 粘性定位</li>
+</ul>
+</li>
+<li>如何布局<ul>
+<li>flexbox</li>
+<li>float</li>
+<li>inline-block</li>
+<li>block content</li>
+<li>BFC(块级格式化上下文)</li>
+<li>position</li>
+</ul>
+</li>
+<li>如何判断一个变量是数组<ul>
+<li>Array.isArray</li>
+<li>arr instanceof Array</li>
+<li>arr.<strong>proto</strong> === Array.prototype</li>
+<li>arr.constructor === Array</li>
+<li>Object.prototype.toString.call(arr) === ‘[object Array]’</li>
+<li>lodash中 _.isArray</li>
+</ul>
+</li>
+<li>十六进制转换十进制<ul>
+<li>parseInt(‘ff039B’, 16)</li>
+<li>11 <em> 16^0 + 9 </em> 16^1 + 3<em>16^2 + 0 + 15 </em> 16^4 + 15 * 16^5</li>
+</ul>
+</li>
+<li>typeof 返回值有哪些？<ul>
+<li>undefined</li>
+<li>string</li>
+<li>number</li>
+<li>object</li>
+<li>boolean</li>
+<li>function</li>
+<li>symbol</li>
+</ul>
+</li>
+<li>Function是对象还是函数，和function有什么关系<ul>
+<li>Function是函数，构造出来的对象是函数的实例</li>
+<li>Function instanceof Object -&gt; ture</li>
+<li>Object instanceof Function -&gt; ture</li>
+<li>Object instanceof Object -&gt; ture</li>
+<li>Function instanceof Function -&gt; ture</li>
+</ul>
+</li>
+<li>什么是http代理<ul>
+<li>中转站，相当于路由</li>
+<li>代为处理你的网路请求</li>
+</ul>
+</li>
+<li><p>http方法有哪些？怎么决定用哪个？</p>
+<ul>
+<li>get 往url后面拼参数                                 SELECT</li>
+<li>post 把请求的数据放进body里去                       UPDATE</li>
+<li>delete 删除服务器上某一个东西，当然你需要有权限     DELETE FROM</li>
+<li>put 往服务器放置一些东西，当然也需要有权限          INSERT INTO</li>
+<li>其实就是增删改查 C R U D （Create Retrieve Update Delate）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE /user/123 HTTP/1.1</span><br><span class="line">...</span><br><span class="line">PUT /register HTTP/1.1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>$函数接收哪些类型的参数，分别有什么用？</p>
+<ul>
+<li>传css选择器，返回一个DOM的jquery对象</li>
+<li>传HTML，包裹成一个和query对象</li>
+<li>传js对象，$([1,2,3,4,5]) $(document.querySelectorAll(‘span’))</li>
+<li>传jquery对象，制造副本</li>
+</ul>
+</li>
+<li>如何用jQuery修改img的src<ul>
+<li>.attr(‘src’, ‘xxx’)</li>
+<li>设置textarea的值(记混)<ul>
+<li>$(‘textarea’).val(‘the content’)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>现在node的长期支持版本（LTS Long term Support)版本是多少？最新版本是多少？<ul>
+<li>LTS 6.9.5</li>
+<li>最新 7.5.0 （还在飞速更新）</li>
+</ul>
+</li>
+<li>node的异步是如何实现的<ul>
+<li>异步背后是用多线程实现的</li>
+<li>具体实现是libuv 其实是用C++写的</li>
+<li>跨平台的异步I/O</li>
+<li>线程池/连接池 pool</li>
+<li>HTTP 1.1</li>
+<li>connection: keep-alive</li>
+</ul>
+</li>
+<li><p>设计一个dialog组件 （弹出窗口）</p>
+<ul>
+<li>点击按钮，绑定click事件</li>
+<li>让dialog display: none; 切换成block弹窗的样式</li>
+<li>屏幕居中</li>
+<li>加上遮罩层</li>
+<li><p>防止滚动（overflow:hidden）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始接口</span></span><br><span class="line"><span class="keyword">var</span> clicked = openDialog(<span class="string">'are you OK?'</span>, <span class="function"><span class="keyword">function</span> <span class="title">onClickYes</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  coding...</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> <span class="title">onClickNo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  coding...</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//可以封装成</span></span><br><span class="line">openDialog(<span class="string">'are you OK?'</span>).then().catch()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三方库</p>
+<ul>
+<li>smalltalk</li>
+<li><a href="https://github.com/coderaiser/smalltalk" target="_blank" rel="noopener">https://github.com/coderaiser/smalltalk</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>html标签里的js,css可以从其他域加载<ul>
+<li>为什么可以呢？<ul>
+<li>信任问题</li>
+</ul>
+</li>
+<li>ajax域名不同于跨域</li>
+</ul>
+</li>
+<li>如何热解决跨域<ul>
+<li>jsonp</li>
+<li>cors http header里添加字段 <ul>
+<li>Access-Control-Allow-Origin: a.com, b.com</li>
+<li>Access-Control-Allow-Origin: * </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>websocket 没有跨域问题<ul>
+<li>ws = newWebSock(‘ws://a.com/a/b/c’)</li>
+<li>ws.onmessage</li>
+<li>ws.send()</li>
+<li>Socked.IO</li>
+</ul>
+</li>
+<li>如何获取 UserAgent<ul>
+<li>JS: navigator.userAgent</li>
+<li>服务器: User-Agent头</li>
+</ul>
+</li>
+<li>web安全<ul>
+<li>xss</li>
+<li>csrf</li>
+<li>sql inject sql注入</li>
+</ul>
+</li>
+<li>事件模型，事件监听，事件捕获，事件冒泡</li>
+<li>阻止冒泡<ul>
+<li>e.stopP的一个方法</li>
+<li>jQuery return false</li>
+</ul>
+</li>
+<li>mobile 图片切图<ul>
+<li>移动端小米商城</li>
+<li>viewport</li>
+<li>rem</li>
+<li>vh/vw</li>
+<li>flex</li>
+<li>media query</li>
+</ul>
+</li>
+<li>prototype 和<strong>proto</strong><ul>
+<li>prototype，js用来构造函数作为实例工厂</li>
+<li>实例的<strong>proto</strong>指向构造函数的prototype</li>
+<li>函数有prototype</li>
+<li>实例有<strong>proto</strong></li>
+</ul>
+</li>
+<li><p>什么是http代理</p>
+<ul>
+<li>一个遵循协议的代理<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">============</span><br><span class="line">GET http://a.com/a.html HTTP/1.1</span><br><span class="line">User-Agent:xxx</span><br><span class="line">============</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>设计一个dataTable,至少包含分页，单选多选，搜索。</p>
+<ul>
+<li><p>Dom结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"search"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>请选择要搜索的字段<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第一页<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第二页<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第三页<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>搜索</p>
+<ul>
+<li>搜索的结果尽可能的多</li>
+</ul>
+</li>
+<li>分页<ul>
+<li>一页显示多少条数据</li>
+</ul>
+</li>
+<li>排序<ul>
+<li>按任意的列去排序</li>
+<li>可能必须要用稳定的排序算法</li>
+</ul>
+</li>
+<li><p>大致接口设计</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dt = <span class="keyword">new</span> DataTable(&#123;</span><br><span class="line">  data:[&#123;<span class="attr">name</span>:<span class="string">'a'</span>, <span class="attr">score</span>: <span class="number">100</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'b'</span>, <span class="attr">score</span>: <span class="number">90</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'c'</span>, <span class="attr">score</span>: <span class="number">80</span>&#125;],</span><br><span class="line">  data:[[<span class="string">'a'</span>, <span class="number">100</span>], [<span class="string">'b'</span>, <span class="number">90</span>], [<span class="string">'c'</span>, <span class="number">80</span>]],</span><br><span class="line">  tableHead: [<span class="string">'name'</span>, <span class="string">'score'</span>],</span><br><span class="line">  el: <span class="string">'#table'</span>,</span><br><span class="line">  theme: <span class="string">'light/dark'</span></span><br><span class="line">  pageSize: <span class="literal">Infinity</span>,</span><br><span class="line">  pageNum: <span class="number">8</span>,</span><br><span class="line">  pageChange: <span class="function"><span class="keyword">function</span>(<span class="params">prevPage, nowPage</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">  sortBy:[<span class="string">'abc'</span>, <span class="string">'def'</span>],</span><br><span class="line">  search: <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  dt.set(<span class="string">'pageSize'</span>, <span class="number">20</span>)</span><br><span class="line">  dt.on(<span class="string">'...'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缓存</p>
+<ul>
+<li>DOM缓存 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>排序算法的复杂度<ul>
+<li>复杂度从最快到最慢排序<ul>
+<li>1</li>
+<li>logN</li>
+<li>N -&gt; 桶排序</li>
+<li>N*logN -&gt; 快排，堆排</li>
+<li>N*N -&gt; 冒泡，插入，选择</li>
+<li>N<em>N</em>N</li>
+<li>N^x</li>
+<li>x ^ N</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>链表倒叙</p>
+<ul>
+<li><p>将链表倒叙并返回倒叙后链表的头节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">linkList</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!linkList) &#123;</span><br><span class="line">    <span class="keyword">return</span> linkList</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> head = linkList <span class="comment">//当前链表的头节点</span></span><br><span class="line">  <span class="keyword">var</span> tail = linkList.next <span class="comment">//从第二个节点开始的子链表</span></span><br><span class="line">  <span class="keyword">var</span> reversed = reverse(tail) <span class="comment">//把子链表倒叙并返回子链表性的头节点（即原来的尾部）</span></span><br><span class="line">  <span class="comment">//head.next = null</span></span><br><span class="line">  tail.next = head</span><br><span class="line">  <span class="keyword">return</span> reversed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上述代码缺点是链表长度无法超过栈的深度，超过会爆栈。</p>
+</li>
+<li>leetCode上206题<ul>
+<li>可以先算出栈的长度，超过长度分割成多个链表，倒叙每一个链表后在合并</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>inline/block/inline-block的区别<ul>
+<li>inline元素折行时折行处的垂直border是否还有<ul>
+<li>答案是没有</li>
+</ul>
+</li>
+<li>如果我就是想要折行处有border怎么办呢？<ul>
+<li>面试官说他也不知道，就想问一问</li>
+<li>其实答案是可以用box-shadow代替那一块的缺失</li>
+<li>要是问水平方向的padding怎么办？<ul>
+<li>再用box-shadow试试。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>stream</p>
+<ul>
+<li>有什么优缺点<ul>
+<li>节省内存</li>
+<li>因为是异步的，所以空闲事件主线程可以干别的事</li>
+</ul>
+</li>
+<li><p>既然十八一个流里的内容导到另一个流里，为什么不能用for循环呢？例如如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rs = fs.createReadStream(<span class="string">'a.txt'</span>)</span><br><span class="line">ws = fs.createReadStream(...)</span><br><span class="line"><span class="keyword">for</span>(;;)&#123;</span><br><span class="line">  ws.write(rs.send())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>答案：for循环是同步的，而流的过程是异步的，for循环执行完毕前都需要等待</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>iframe的各种作用<ul>
+<li>跨域</li>
+<li>沙盒</li>
+<li>在没有ajax的时候做不刷新页面的表单提交</li>
+</ul>
+</li>
+<li>svg在页面上有多少种使用方法？<ul>
+<li>直接嵌入</li>
+<li>img/iframe/object等标签引入</li>
+<li>viewBOx</li>
+<li>use</li>
+<li>都能算是不是的用法</li>
+<li>具体看你了解多少</li>
+</ul>
+</li>
+<li>line-height计算方式<ul>
+<li>1.5</li>
+<li>150%</li>
+</ul>
+</li>
+<li>webfont闪烁加载的原因及解决方案与fonc的区别<ul>
+<li>做字体子集</li>
+<li>把字体转成datauri内嵌到css里面</li>
+</ul>
+</li>
+<li><p>双向绑定的解决方案，如何实现</p>
+<ul>
+<li>getter/setter</li>
+<li>脏检查（dirty check），angular用的方式<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dirtyCheck(data, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">8</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>如何处理异步复杂流程</p>
+<ul>
+<li>在promise之前有node的domain，不过已废弃</li>
+<li>promise，可polyfill到ie6</li>
+<li>es7：async</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/08/Web performance optimization/" rel="next" title="性能优化专题">
+                <i class="fa fa-chevron-left"></i> 性能优化专题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/23/flexbox布局/" rel="prev" title="Flexbox 布局">
+                Flexbox 布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Incisa">
+          <p class="site-author-name" itemprop="name">Incisa</p>
+           
+              <p class="site-description motion-element" itemprop="description">隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/incisa.io" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=49216860" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Incisa</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+</html>

@@ -1,0 +1,1015 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter/css?family=Lato:300,300italic,400,400italic,700,700italic|Architects Daughter:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="既然都整理了 Array ，顺便也把 String 的属性和方法也捋一遍吧。  String 全局对象是一个用于字符串或一个字符序列的构造函数。 属性string.lengthlength 属性表示一个字符串的长度。 12345678var x = &quot;Mozilla&quot;;var empty = &quot;&quot;;console.log(&quot;Mozilla is &quot; + x.length + &quot; code uni">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 中 String 对象的属性及方法">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/String对象的属性和方法/index.html">
+<meta property="og:site_name" content="Incisa&#39;s Note">
+<meta property="og:description" content="既然都整理了 Array ，顺便也把 String 的属性和方法也捋一遍吧。  String 全局对象是一个用于字符串或一个字符序列的构造函数。 属性string.lengthlength 属性表示一个字符串的长度。 12345678var x = &quot;Mozilla&quot;;var empty = &quot;&quot;;console.log(&quot;Mozilla is &quot; + x.length + &quot; code uni">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-11T07:05:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 中 String 对象的属性及方法">
+<meta name="twitter:description" content="既然都整理了 Array ，顺便也把 String 的属性和方法也捋一遍吧。  String 全局对象是一个用于字符串或一个字符序列的构造函数。 属性string.lengthlength 属性表示一个字符串的长度。 12345678var x = &quot;Mozilla&quot;;var empty = &quot;&quot;;console.log(&quot;Mozilla is &quot; + x.length + &quot; code uni">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/03/String对象的属性和方法/">
+
+
+
+
+
+  <title> JavaScript 中 String 对象的属性及方法 | Incisa's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Incisa's Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/String对象的属性和方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Incisa">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Incisa's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript 中 String 对象的属性及方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-03T19:05:13+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>既然都整理了 Array ，顺便也把 String 的属性和方法也捋一遍吧。</p>
+</blockquote>
+<p>String 全局对象是一个用于字符串或一个字符序列的构造函数。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="string-length"><a href="#string-length" class="headerlink" title="string.length"></a>string.length</h4><p><code>length</code> 属性表示一个字符串的长度。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">"Mozilla"</span>;</span><br><span class="line"><span class="keyword">var</span> empty = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Mozilla is "</span> + x.length + <span class="string">" code units long"</span>);</span><br><span class="line"><span class="comment">/* "Mozilla is 7 code units long" */</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The empty string is has a length of "</span> + empty.length);</span><br><span class="line"><span class="comment">/* "The empty string is has a length of 0" */</span></span><br></pre></td></tr></table></figure>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="String-fromCharCode"><a href="#String-fromCharCode" class="headerlink" title="String.fromCharCode()"></a>String.fromCharCode()</h4><p>静态 <code>String.fromCharCode()</code> 方法返回使用指定的 Unicode 值序列创建的字符串。</p>
+<blockquote>
+<p>String.fromCharCode(num1, …, numN) </p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.fromCharCode(<span class="number">65</span>,<span class="number">66</span>,<span class="number">67</span>)</span><br><span class="line"><span class="comment">// 返回 "ABC"</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h4><p><code>String.fromCodePoint()</code> 静态方法返回使用指定的代码点序列创建的字符串。</p>
+<blockquote>
+<p>String.fromCodePoint(num1[, …[, numN]])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">42</span>);       <span class="comment">// "*"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">65</span>, <span class="number">90</span>);   <span class="comment">// "AZ"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x404</span>);    <span class="comment">// "\u0404"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x2F804</span>);  <span class="comment">// "\uD87E\uDC04"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">194564</span>);   <span class="comment">// "\uD87E\uDC04"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x1D306</span>, <span class="number">0x61</span>, <span class="number">0x1D307</span>) <span class="comment">// "\uD834\uDF06a\uD834\uDF07"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="string">'_'</span>);      <span class="comment">// RangeError</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="literal">Infinity</span>); <span class="comment">// RangeError</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">-1</span>);       <span class="comment">// RangeError</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">3.14</span>);     <span class="comment">// RangeError</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">3e-2</span>);     <span class="comment">// RangeError</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="literal">NaN</span>);      <span class="comment">// RangeError</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-charAt"><a href="#String-prototype-charAt" class="headerlink" title="String.prototype.charAt()"></a>String.prototype.charAt()</h4><p><code>charAt()</code> 方法从一个字符串中返回指定的字符。</p>
+<blockquote>
+<p>str.charAt(index)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下例输出字符串 "Brave new world" 不同位置处的字符：</span></span><br><span class="line"><span class="keyword">var</span> anyString = <span class="string">"Brave new world"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The character at index 0   is '"</span> + anyString.charAt(<span class="number">0</span>)   + <span class="string">"'"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The character at index 1   is '"</span> + anyString.charAt(<span class="number">1</span>)   + <span class="string">"'"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The character at index 2   is '"</span> + anyString.charAt(<span class="number">2</span>)   + <span class="string">"'"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The character at index 3   is '"</span> + anyString.charAt(<span class="number">3</span>)   + <span class="string">"'"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The character at index 4   is '"</span> + anyString.charAt(<span class="number">4</span>)   + <span class="string">"'"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"The character at index 999 is '"</span> + anyString.charAt(<span class="number">999</span>) + <span class="string">"'"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// The character at index 0 is 'B'</span></span><br><span class="line"><span class="comment">// The character at index 1 is 'r'</span></span><br><span class="line"><span class="comment">// The character at index 2 is 'a'</span></span><br><span class="line"><span class="comment">// The character at index 3 is 'v'</span></span><br><span class="line"><span class="comment">// The character at index 4 is 'e'</span></span><br><span class="line"><span class="comment">// The character at index 999 is ''</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h4><p><code>charCodeAt()</code> 方法返回 0 到 65535 之间的整数，表示给定索引处的 UTF-16 代码单元 (在 Unicode 编码单元表示一个单一的 UTF-16 编码单元的情况下，UTF-16 编码单元匹配 Unicode 编码单元。但在——例如 Unicode 编码单元&gt; 0x10000 的这种——不能被一个 UTF-16 编码单元单独表示的情况下，只能匹配 Unicode 代理对的第一个编码单元) 。如果你想要整个代码点的值，使用 <code>codePointAt()</code>。</p>
+<blockquote>
+<p>str.charCodeAt(index)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"ABC"</span>.charCodeAt(<span class="number">0</span>) <span class="comment">// returns 65</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-codePointAt"><a href="#String-prototype-codePointAt" class="headerlink" title="String.prototype.codePointAt()"></a>String.prototype.codePointAt()</h4><p><code>codePointAt()</code> 方法返回 一个 Unicode 编码点值的非负整数。</p>
+<blockquote>
+<p>str.codePointAt(pos)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'ABC'</span>.codePointAt(<span class="number">1</span>);          <span class="comment">// 66</span></span><br><span class="line"><span class="string">'\uD800\uDC00'</span>.codePointAt(<span class="number">0</span>); <span class="comment">// 65536</span></span><br><span class="line"></span><br><span class="line"><span class="string">'XYZ'</span>.codePointAt(<span class="number">42</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-concat"><a href="#String-prototype-concat" class="headerlink" title="String.prototype.concat()"></a>String.prototype.concat()</h4><p><code>concat()</code> 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</p>
+<blockquote>
+<p>str.concat(string2, string3[, …, stringN])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello = <span class="string">"Hello, "</span></span><br><span class="line"><span class="built_in">console</span>.log(hello.concat(<span class="string">"Kevin"</span>, <span class="string">" have a nice day."</span>))</span><br><span class="line"><span class="comment">/* Hello, Kevin have a nice day. */</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-endsWith"><a href="#String-prototype-endsWith" class="headerlink" title="String.prototype.endsWith()"></a>String.prototype.endsWith()</h4><blockquote>
+<p>该新特性属于 ECMAScript 2015（ES6）规范，在使用时请注意浏览器兼容性。</p>
+</blockquote>
+<p>endsWith()方法用来判断当前字符串是否是以另外一个给定的子字符串 “结尾” 的，根据判断结果返回 true 或 false。</p>
+<blockquote>
+<p>str.endsWith(searchString [, position]);</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"To be, or not to be, that is the question."</span>;</span><br><span class="line"></span><br><span class="line">alert( str.endsWith(<span class="string">"question."</span>) );  <span class="comment">// true</span></span><br><span class="line">alert( str.endsWith(<span class="string">"to be"</span>) );      <span class="comment">// false</span></span><br><span class="line">alert( str.endsWith(<span class="string">"to be"</span>, <span class="number">19</span>) );  <span class="comment">// true</span></span><br><span class="line">alert( str.endsWith(<span class="string">"To be"</span>, <span class="number">5</span>) );   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-includes"><a href="#String-prototype-includes" class="headerlink" title="String.prototype.includes()"></a>String.prototype.includes()</h4><p><code>includes()</code> 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。</p>
+<blockquote>
+<p>str.includes(searchString[, position])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'To be, or not to be, that is the question.'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'To be'</span>));       <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'question'</span>));    <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'nonexistent'</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'To be'</span>, <span class="number">1</span>));    <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'TO BE'</span>));       <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-indexOf"><a href="#String-prototype-indexOf" class="headerlink" title="String.prototype.indexOf()"></a>String.prototype.indexOf()</h4><p><code>indexOf()</code> 方法返回调用  String 对象中第一次出现的指定值的索引，开始在 fromIndex 进行搜索。如果未找到该值，则返回 -1。</p>
+<blockquote>
+<p>str.indexOf(searchValue[, fromIndex])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">"Blue"</span>);     <span class="comment">// returns  0</span></span><br><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">"Blute"</span>);    <span class="comment">// returns -1</span></span><br><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">"Whale"</span>, <span class="number">0</span>); <span class="comment">// returns  5</span></span><br><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">"Whale"</span>, <span class="number">5</span>); <span class="comment">// returns  5</span></span><br><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">""</span>, <span class="number">9</span>);      <span class="comment">// returns  9</span></span><br><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">""</span>, <span class="number">10</span>);     <span class="comment">// returns 10</span></span><br><span class="line"><span class="string">"Blue Whale"</span>.indexOf(<span class="string">""</span>, <span class="number">11</span>);     <span class="comment">// returns 10</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-lastIndexOf"><a href="#String-prototype-lastIndexOf" class="headerlink" title="String.prototype.lastIndexOf()"></a>String.prototype.lastIndexOf()</h4><p>lastIndexOf() 方法返回指定值在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。从该字符串的后面向前查找，从 fromIndex 处开始。</p>
+<blockquote>
+<p>str.lastIndexOf(searchValue[, fromIndex])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"canal"</span>.lastIndexOf(<span class="string">"a"</span>)   <span class="comment">// returns 3</span></span><br><span class="line"><span class="string">"canal"</span>.lastIndexOf(<span class="string">"a"</span>,<span class="number">2</span>) <span class="comment">// returns 1</span></span><br><span class="line"><span class="string">"canal"</span>.lastIndexOf(<span class="string">"a"</span>,<span class="number">0</span>) <span class="comment">// returns -1</span></span><br><span class="line"><span class="string">"canal"</span>.lastIndexOf(<span class="string">"x"</span>)   <span class="comment">// returns -1</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-link"><a href="#String-prototype-link" class="headerlink" title="String.prototype.link()"></a>String.prototype.link()</h4><p><code>link()</code> 方法创建一个 \<a> HTML 元素，用该字符串作为超链接的显示文本，参数作为指向另一个 URL 的超链接。</a></p>
+<blockquote>
+<p>str.link(url) </p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下例显示一个单词 "MDN" 作为超链接，指向 Mozilla Developer Network。</span></span><br><span class="line"><span class="keyword">var</span> hotText = <span class="string">"MDN"</span>;</span><br><span class="line"><span class="keyword">var</span> URL = <span class="string">"https://developer.mozilla.org/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"Click to return to "</span> + hotText.link(URL));</span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-localeCompare"><a href="#String-prototype-localeCompare" class="headerlink" title="String.prototype.localeCompare()"></a>String.prototype.localeCompare()</h4><p><code>localeCompare()</code> 方法返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。新的 locales 、 options 参数能让应用程序定制函数的行为即指定用来排序的语言。 locales 和 options 参数是依赖于具体实现的，在旧的实现中这两个参数是完全被忽略的。</p>
+<blockquote>
+<p>referenceStr.localeCompare(compareString[, locales[, options]])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The letter "a" is before "c" yielding a negative value</span></span><br><span class="line"><span class="string">'a'</span>.localeCompare(<span class="string">'c'</span>); </span><br><span class="line"><span class="comment">// -2 or -1 (or some other negative value)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Alphabetically the word "check" comes after "against" yielding a positive value</span></span><br><span class="line"><span class="string">'check'</span>.localeCompare(<span class="string">'against'</span>); </span><br><span class="line"><span class="comment">// 2 or 1 (or some other positive value)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// "a" and "a" are equivalent yielding a neutral value of zero</span></span><br><span class="line"><span class="string">'a'</span>.localeCompare(<span class="string">'a'</span>); </span><br><span class="line"><span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-match"><a href="#String-prototype-match" class="headerlink" title="String.prototype.match()"></a>String.prototype.match()</h4><p>当一个字符串与一个正则表达式匹配时， <code>match()</code> 方法检索匹配项。</p>
+<blockquote>
+<p>str.match(regexp);</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'For more information, see Chapter 3.4.5.1'</span>;</span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/see (chapter \d+(\.\d)*)/i</span>;</span><br><span class="line"><span class="keyword">var</span> found = str.match(re);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(found);</span><br><span class="line"></span><br><span class="line"><span class="comment">// logs [ 'see Chapter 3.4.5.1',</span></span><br><span class="line"><span class="comment">//        'Chapter 3.4.5.1',</span></span><br><span class="line"><span class="comment">//        '.1',</span></span><br><span class="line"><span class="comment">//        index: 22,</span></span><br><span class="line"><span class="comment">//        input: 'For more information, see Chapter 3.4.5.1' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 'see Chapter 3.4.5.1' 是整个匹配。</span></span><br><span class="line"><span class="comment">// 'Chapter 3.4.5.1' 被'(chapter \d+(\.\d)*)'捕获。</span></span><br><span class="line"><span class="comment">// '.1' 是被'(\.\d)'捕获的最后一个值。</span></span><br><span class="line"><span class="comment">// 'index' 属性(22) 是整个匹配从零开始的索引。</span></span><br><span class="line"><span class="comment">// 'input' 属性是被解析的原始字符串。</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-normalize"><a href="#String-prototype-normalize" class="headerlink" title="String.prototype.normalize()"></a>String.prototype.normalize()</h4><blockquote>
+<p>该新特性属于 ECMAScript 2015（ES6）规范，在使用时请注意浏览器兼容性。</p>
+</blockquote>
+<p><code>normalize()</code> 方法会按照指定的一种 Unicode 正规形式将当前字符串正规化.</p>
+<blockquote>
+<p>str.normalize([form]);</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Initial string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE</span></span><br><span class="line"><span class="comment">// U+0323: COMBINING DOT BELOW</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"\u1E9B\u0323"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Canonically-composed form (NFC)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE</span></span><br><span class="line"><span class="comment">// U+0323: COMBINING DOT BELOW</span></span><br><span class="line">str.normalize(<span class="string">"NFC"</span>); <span class="comment">// "\u1E9B\u0323"</span></span><br><span class="line">str.normalize(); <span class="comment">// same as above</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Canonically-decomposed form (NFD)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// U+017F: LATIN SMALL LETTER LONG S</span></span><br><span class="line"><span class="comment">// U+0323: COMBINING DOT BELOW</span></span><br><span class="line"><span class="comment">// U+0307: COMBINING DOT ABOVE</span></span><br><span class="line">str.normalize(<span class="string">"NFD"</span>); <span class="comment">// "\u017F\u0323\u0307"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Compatibly-composed (NFKC)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// U+1E69: LATIN SMALL LETTER S WITH DOT BELOW AND DOT ABOVE</span></span><br><span class="line">str.normalize(<span class="string">"NFKC"</span>); <span class="comment">// "\u1E69"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Compatibly-decomposed (NFKD)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// U+0073: LATIN SMALL LETTER S</span></span><br><span class="line"><span class="comment">// U+0323: COMBINING DOT BELOW</span></span><br><span class="line"><span class="comment">// U+0307: COMBINING DOT ABOVE</span></span><br><span class="line">str.normalize(<span class="string">"NFKD"</span>); <span class="comment">// "\u0073\u0323\u0307"</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-repeat"><a href="#String-prototype-repeat" class="headerlink" title="String.prototype.repeat()"></a>String.prototype.repeat()</h4><p><code>repeat()</code> 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。</p>
+<blockquote>
+<p>let resultString = str.repeat(count);</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abc"</span>.repeat(<span class="number">-1</span>)     <span class="comment">// RangeError: repeat count must be positive and less than inifinity</span></span><br><span class="line"><span class="string">"abc"</span>.repeat(<span class="number">0</span>)      <span class="comment">// ""</span></span><br><span class="line"><span class="string">"abc"</span>.repeat(<span class="number">1</span>)      <span class="comment">// "abc"</span></span><br><span class="line"><span class="string">"abc"</span>.repeat(<span class="number">2</span>)      <span class="comment">// "abcabc"</span></span><br><span class="line"><span class="string">"abc"</span>.repeat(<span class="number">3.5</span>)    <span class="comment">// "abcabcabc" 参数count将会被自动转换成整数.</span></span><br><span class="line"><span class="string">"abc"</span>.repeat(<span class="number">1</span>/<span class="number">0</span>)    <span class="comment">// RangeError: repeat count must be positive and less than inifinity</span></span><br><span class="line"></span><br><span class="line">(&#123;<span class="attr">toString</span> : <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">"abc"</span>, <span class="attr">repeat</span> : <span class="built_in">String</span>.prototype.repeat&#125;).repeat(<span class="number">2</span>)   </span><br><span class="line"><span class="comment">//"abcabc",repeat是一个通用方法,也就是它的调用者可以不是一个字符串对象.</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h4><p><code>replace()</code> 方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者是一个每次匹配都需要调用的函数。</p>
+<blockquote>
+<p>str.replace(regexp|substr, newSubstr|function)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replacer</span>(<span class="params">match, p1, p2, p3, offset, string</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// p1 is nondigits, p2 digits, and p3 non-alphanumerics</span></span><br><span class="line">  <span class="keyword">return</span> [p1, p2, p3].join(<span class="string">' - '</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> newString = <span class="string">'abc12345#$*%'</span>.replace(<span class="regexp">/([^\d]*)(\d*)([^\w]*)/</span>, replacer);</span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-search"><a href="#String-prototype-search" class="headerlink" title="String.prototype.search()"></a>String.prototype.search()</h4><p><code>search()</code> 方法执行正则表达式和 String对象之间的一个搜索匹配。</p>
+<blockquote>
+<p>str.search(regexp)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testinput</span>(<span class="params">re, str</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> midstring;</span><br><span class="line">  <span class="keyword">if</span> (str.search(re) != <span class="number">-1</span>)&#123;</span><br><span class="line">    midstring = <span class="string">" contains "</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    midstring = <span class="string">" does not contain "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log (str + midstring + re);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-slice"><a href="#String-prototype-slice" class="headerlink" title="String.prototype.slice()"></a>String.prototype.slice()</h4><p><code>slice()</code> 方法提取一个字符串的一部分，并返回一新的字符串。</p>
+<blockquote>
+<p>str.slice(beginSlice[, endSlice])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'The morning is upon us.'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = str1.slice(<span class="number">4</span>, <span class="number">-2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str2); </span><br><span class="line"><span class="comment">// OUTPUT: morning is upon u</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-split"><a href="#String-prototype-split" class="headerlink" title="String.prototype.split()"></a>String.prototype.split()</h4><p><code>split()</code> 方法将一个String对象分割成字符串数组，通过将字符串分成子串。</p>
+<blockquote>
+<p>str.split([separator[, limit]])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Webkit Moz O ms Khtml"</span>.split( <span class="string">" "</span> )   </span><br><span class="line"><span class="comment">// ["Webkit", "Moz", "O", "ms", "Khtml"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-startsWith"><a href="#String-prototype-startsWith" class="headerlink" title="String.prototype.startsWith()"></a>String.prototype.startsWith()</h4><blockquote>
+<p>该新特性属于 ECMAScript 2015（ES6）规范，在使用时请注意浏览器兼容性。</p>
+</blockquote>
+<p><code>startsWith()</code> 方法用来判断当前字符串是否是以另外一个给定的子字符串 “开头” 的，根据判断结果返回 true 或 false。</p>
+<blockquote>
+<p>str.startsWith(searchString [, position]);</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"To be, or not to be, that is the question."</span>;</span><br><span class="line"></span><br><span class="line">alert(str.startsWith(<span class="string">"To be"</span>));         <span class="comment">// true</span></span><br><span class="line">alert(str.startsWith(<span class="string">"not to be"</span>));     <span class="comment">// false</span></span><br><span class="line">alert(str.startsWith(<span class="string">"not to be"</span>, <span class="number">10</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-substr"><a href="#String-prototype-substr" class="headerlink" title="String.prototype.substr()"></a>String.prototype.substr()</h4><p><code>substr()</code> 方法返回一个字符串中从指定位置开始到指定字符数的字符。</p>
+<blockquote>
+<p>str.substr(start[, length])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"abcdefghij"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"(1,2): "</span>    + str.substr(<span class="number">1</span>,<span class="number">2</span>));   <span class="comment">// (1,2): bc</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"(-3,2): "</span>   + str.substr(<span class="number">-3</span>,<span class="number">2</span>));  <span class="comment">// (-3,2): hi</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"(-3): "</span>     + str.substr(<span class="number">-3</span>));    <span class="comment">// (-3): hij</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"(1): "</span>      + str.substr(<span class="number">1</span>));     <span class="comment">// (1): bcdefghij</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"(-20, 2): "</span> + str.substr(<span class="number">-20</span>,<span class="number">2</span>)); <span class="comment">// (-20, 2): ab</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"(20, 2): "</span>  + str.substr(<span class="number">20</span>,<span class="number">2</span>));  <span class="comment">// (20, 2):</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-substring"><a href="#String-prototype-substring" class="headerlink" title="String.prototype.substring()"></a>String.prototype.substring()</h4><p><code>substring()</code> 方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。</p>
+<blockquote>
+<p>str.substring(indexStart[, indexEnd])</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anyString = <span class="string">"Mozilla"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出 "Moz"</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>,<span class="number">3</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">3</span>,<span class="number">0</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">3</span>,<span class="number">-3</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">3</span>,<span class="literal">NaN</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">-2</span>,<span class="number">3</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="literal">NaN</span>,<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出 "lla"</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">4</span>,<span class="number">7</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">7</span>,<span class="number">4</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出 ""</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">4</span>,<span class="number">4</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出 "Mozill"</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>,<span class="number">6</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出 "Mozilla"</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>,<span class="number">7</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>,<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-toLocaleLowerCase"><a href="#String-prototype-toLocaleLowerCase" class="headerlink" title="String.prototype.toLocaleLowerCase()"></a>String.prototype.toLocaleLowerCase()</h4><p><code>toLocaleLowerCase()</code> 方法根据任何特定于语言环境的案例映射，返回调用字符串值转换为小写的值。</p>
+<blockquote>
+<p>str.toLocaleLowerCase()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'ALPHABET'</span>.toLocaleLowerCase()); </span><br><span class="line"><span class="comment">// 'alphabet'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'中文简体 zh-CN || zh-Hans'</span>.toLocaleLowerCase());</span><br><span class="line"><span class="comment">// '中文简体 zh-cn || zh-hans'</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-toLocaleUpperCase"><a href="#String-prototype-toLocaleUpperCase" class="headerlink" title="String.prototype.toLocaleUpperCase()"></a>String.prototype.toLocaleUpperCase()</h4><p><code>toLocaleUpperCase()</code> 使用本地化（locale-specific）的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。</p>
+<blockquote>
+<p>str.toLocaleUpperCase()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'alphabet'</span>.toLocaleUpperCase()); </span><br><span class="line"><span class="comment">// 'ALPHABET'</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-toLowerCase"><a href="#String-prototype-toLowerCase" class="headerlink" title="String.prototype.toLowerCase()"></a>String.prototype.toLowerCase()</h4><p><code>toLowerCase()</code> 会将调用该方法的字符串值转为小写形式，并返回。</p>
+<blockquote>
+<p>str.toLowerCase()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'中文简体 zh-CN || zh-Hans'</span>.toLowerCase());</span><br><span class="line"><span class="comment">// 中文简体 zh-cn || zh-hans</span></span><br><span class="line"></span><br><span class="line">​<span class="built_in">console</span>.log( <span class="string">"ALPHABET"</span>.toLowerCase() ); </span><br><span class="line"><span class="comment">// "alphabet"</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-toString"><a href="#String-prototype-toString" class="headerlink" title="String.prototype.toString()"></a>String.prototype.toString()</h4><p><code>toString()</code> 方法返回指定对象的字符串形式。</p>
+<blockquote>
+<p>str.toString()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"Hello world"</span>);</span><br><span class="line"></span><br><span class="line">alert(x.toString())      <span class="comment">// 输出 "Hello world"</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-toUpperCase"><a href="#String-prototype-toUpperCase" class="headerlink" title="String.prototype.toUpperCase()"></a>String.prototype.toUpperCase()</h4><p><code>toUpperCase()</code> 将调用该方法的字符串值转换为大写形式，并返回。</p>
+<blockquote>
+<p>str.toUpperCase()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">​<span class="built_in">console</span>.log( <span class="string">"alphabet"</span>.toUpperCase() );</span><br><span class="line"><span class="comment">// "ALPHABET"</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-trim"><a href="#String-prototype-trim" class="headerlink" title="String.prototype.trim()"></a>String.prototype.trim()</h4><p><code>trim()</code> 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。</p>
+<blockquote>
+<p>str.trim()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> orig = <span class="string">'   foo  '</span>;</span><br><span class="line"><span class="built_in">console</span>.log(orig.trim()); <span class="comment">// 'foo'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 另一个.trim()例子，只从一边删除</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> orig = <span class="string">'foo    '</span>;</span><br><span class="line"><span class="built_in">console</span>.log(orig.trim()); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure>
+<h4 id="String-prototype-valueOf"><a href="#String-prototype-valueOf" class="headerlink" title="String.prototype.valueOf()"></a>String.prototype.valueOf()</h4><p><code>valueOf()</code> 方法返回一个 String 对象的原始值（primitive value）。</p>
+<blockquote>
+<p>str.valueOf()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"Hello world"</span>);</span><br><span class="line">alert(x.valueOf())   </span><br><span class="line"><span class="comment">// Displays "Hello world"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/01/Array对象的属性和方法/" rel="next" title="JavaScript 中 Array 对象的属性及方法">
+                <i class="fa fa-chevron-left"></i> JavaScript 中 Array 对象的属性及方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/15/移动端触屏事件试验场/" rel="prev" title="移动端触屏事件试验笔记">
+                移动端触屏事件试验笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Incisa">
+          <p class="site-author-name" itemprop="name">Incisa</p>
+           
+              <p class="site-description motion-element" itemprop="description">隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/incisa.io" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=49216860" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#string-length"><span class="nav-number">1.1.</span> <span class="nav-text">string.length</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#String-fromCharCode"><span class="nav-number">2.1.</span> <span class="nav-text">String.fromCharCode()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-fromCodePoint"><span class="nav-number">2.2.</span> <span class="nav-text">String.fromCodePoint()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-charAt"><span class="nav-number">2.3.</span> <span class="nav-text">String.prototype.charAt()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-charCodeAt"><span class="nav-number">2.4.</span> <span class="nav-text">String.prototype.charCodeAt()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-codePointAt"><span class="nav-number">2.5.</span> <span class="nav-text">String.prototype.codePointAt()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-concat"><span class="nav-number">2.6.</span> <span class="nav-text">String.prototype.concat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-endsWith"><span class="nav-number">2.7.</span> <span class="nav-text">String.prototype.endsWith()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-includes"><span class="nav-number">2.8.</span> <span class="nav-text">String.prototype.includes()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-indexOf"><span class="nav-number">2.9.</span> <span class="nav-text">String.prototype.indexOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-lastIndexOf"><span class="nav-number">2.10.</span> <span class="nav-text">String.prototype.lastIndexOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-link"><span class="nav-number">2.11.</span> <span class="nav-text">String.prototype.link()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-localeCompare"><span class="nav-number">2.12.</span> <span class="nav-text">String.prototype.localeCompare()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-match"><span class="nav-number">2.13.</span> <span class="nav-text">String.prototype.match()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-normalize"><span class="nav-number">2.14.</span> <span class="nav-text">String.prototype.normalize()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-repeat"><span class="nav-number">2.15.</span> <span class="nav-text">String.prototype.repeat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-replace"><span class="nav-number">2.16.</span> <span class="nav-text">String.prototype.replace()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-search"><span class="nav-number">2.17.</span> <span class="nav-text">String.prototype.search()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-slice"><span class="nav-number">2.18.</span> <span class="nav-text">String.prototype.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-split"><span class="nav-number">2.19.</span> <span class="nav-text">String.prototype.split()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-startsWith"><span class="nav-number">2.20.</span> <span class="nav-text">String.prototype.startsWith()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-substr"><span class="nav-number">2.21.</span> <span class="nav-text">String.prototype.substr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-substring"><span class="nav-number">2.22.</span> <span class="nav-text">String.prototype.substring()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-toLocaleLowerCase"><span class="nav-number">2.23.</span> <span class="nav-text">String.prototype.toLocaleLowerCase()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-toLocaleUpperCase"><span class="nav-number">2.24.</span> <span class="nav-text">String.prototype.toLocaleUpperCase()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-toLowerCase"><span class="nav-number">2.25.</span> <span class="nav-text">String.prototype.toLowerCase()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-toString"><span class="nav-number">2.26.</span> <span class="nav-text">String.prototype.toString()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-toUpperCase"><span class="nav-number">2.27.</span> <span class="nav-text">String.prototype.toUpperCase()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-trim"><span class="nav-number">2.28.</span> <span class="nav-text">String.prototype.trim()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-prototype-valueOf"><span class="nav-number">2.29.</span> <span class="nav-text">String.prototype.valueOf()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Incisa</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+</html>

@@ -1,0 +1,1002 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter/css?family=Lato:300,300italic,400,400italic,700,700italic|Architects Daughter:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="经常忘记的一个大坑，不过忘记了的话玩一遍跳青蛙游戏就想起来了2333  CSS3 弹性盒子 (Flexible Box 或 Flexbox)，是一种用于在页面上布置元素的布局模式，使得当页面布局必须适应不同的屏幕尺寸和不同的显示设备时，元素可预测地运行。对于许多应用程序，弹性盒子模型提供了对块模型的改进，因为它不使用浮动，flex 容器的边缘也不会与其内容的边缘折叠。(MDN) 概念在定义方面来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flexbox 布局">
+<meta property="og:url" content="http://yoursite.com/2017/05/23/flexbox布局/index.html">
+<meta property="og:site_name" content="Incisa&#39;s Note">
+<meta property="og:description" content="经常忘记的一个大坑，不过忘记了的话玩一遍跳青蛙游戏就想起来了2333  CSS3 弹性盒子 (Flexible Box 或 Flexbox)，是一种用于在页面上布置元素的布局模式，使得当页面布局必须适应不同的屏幕尺寸和不同的显示设备时，元素可预测地运行。对于许多应用程序，弹性盒子模型提供了对块模型的改进，因为它不使用浮动，flex 容器的边缘也不会与其内容的边缘折叠。(MDN) 概念在定义方面来">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/12998/flexbox.png">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-direction-row.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-direction-row-reverse.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-direction-column.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-direction-column-reverse.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-wrap-nowrap.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-wrap-wrap.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-wrap-wrap-reverse.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-justify-content-flex-start.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-justify-content-flex-end.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-justify-content-center.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-justify-content-space-between.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-justify-content-space-around.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-items-stretch.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-items-flex-start.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-items-flex-end.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-items-center.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-items-baseline.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-content-stretch.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-content-flex-start.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-content-flex-end.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-content-center.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-content-space-between.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-content-space-around.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-order.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-grow-1.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-grow-2.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-flex-shrink.jpg">
+<meta property="og:image" content="https://cask.scotch.io/2015/04/flexbox-align-self.jpg">
+<meta property="og:updated_time" content="2017-07-09T14:10:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flexbox 布局">
+<meta name="twitter:description" content="经常忘记的一个大坑，不过忘记了的话玩一遍跳青蛙游戏就想起来了2333  CSS3 弹性盒子 (Flexible Box 或 Flexbox)，是一种用于在页面上布置元素的布局模式，使得当页面布局必须适应不同的屏幕尺寸和不同的显示设备时，元素可预测地运行。对于许多应用程序，弹性盒子模型提供了对块模型的改进，因为它不使用浮动，flex 容器的边缘也不会与其内容的边缘折叠。(MDN) 概念在定义方面来">
+<meta name="twitter:image" content="https://mdn.mozillademos.org/files/12998/flexbox.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/23/flexbox布局/">
+
+
+
+
+
+  <title> Flexbox 布局 | Incisa's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Incisa's Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/flexbox布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Incisa">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Incisa's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Flexbox 布局
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T00:24:12+08:00">
+                2017-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>经常忘记的一个大坑，不过忘记了的话玩一遍<a href="http://flexboxfroggy.com/" target="_blank" rel="noopener">跳青蛙游戏</a>就想起来了2333</p>
+</blockquote>
+<p><strong>CSS3 弹性盒子 (Flexible Box 或 Flexbox)</strong>，是一种用于在页面上布置元素的布局模式，使得当页面布局必须适应不同的屏幕尺寸和不同的显示设备时，元素可预测地运行。对于许多应用程序，弹性盒子模型提供了对块模型的改进，因为它不使用浮动，flex 容器的边缘也不会与其内容的边缘折叠。(MDN)</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>在定义方面来说，弹性布局是指通过调整其内元素的宽高，从而在任何显示设备上实现对可用显示空间最佳填充的能力。弹性容器扩展其内元素来填充可用空间，或将其收缩来避免溢出。(MDN)</p>
+<p>而块级布局更侧重于垂直方向、行内布局更侧重于水平方向。与此相对的，弹性盒子布局算法是方向无关的。虽然块级布局对于单独一个页面来说是行之有效的，但其仍缺乏足够的定义来支持那些必须随用户代理 (user agent) 不同或设备方向从水平转为垂直等各种变化而变换方向、调整大小、拉伸、收缩的应用程序组件。 弹性盒子布局主要适用于应用程序的组件及小规模的布局，而（新兴的）栅格布局则针对大规模的布局。这二者都是 CSS 工作组为在不同用户代理、不同书写模式和其他灵活性要求下的网页应用程序有更好的互操作性而做出的更广泛的努力的一部分。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在 flex 容器中默认存在两条轴，水平主轴 (main axis) 和垂直的侧轴 (cross axis)，这是默认的设置，当然你可以通过修改使垂直方向变为主轴，水平方向变为交叉轴，这个我们后面再说。图中是一个 flex-direction 属性为 row的弹性容器，意味着其内的弹性项目将根据既定书写模式沿主轴水平排列，其方向为元素的文本流方向，在这个例子里，为从左到右。</p>
+<p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt></p>
+<p><strong>如何定义一个弹性盒子？</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*使容器成为块级元素*/</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="comment">/*使容器成为单个不可分的行内级元素*/</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-flex</span>;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>注意：</strong> 当设置 flex 布局之后，子元素的 <code>float</code>、<code>clear</code>、<code>vertical-align</code> 的属性都会失效。</p>
+</blockquote>
+<p><strong>弹性容器 (Flex container)：</strong><br>包含着弹性项目的父元素。通过设置 display 属性的值为 flex 或 inline-flex 来定义弹性容器。</p>
+<p><strong>弹性项目 (Flex item)：</strong><br>弹性容器的每个子元素都称为弹性项目。弹性容器直接包含的文本将被包覆成匿名弹性单元。</p>
+<p><strong>轴 (Axis)：</strong><br>每个弹性框布局包含两个轴。弹性项目沿其依次排列的那根轴称为<strong>主轴 (main axis)</strong>。垂直于<strong>主轴</strong>的那根轴称为<strong>侧轴 (cross axis)</strong>。</p>
+<ul>
+<li><code>flex-direction</code> 确立主轴。</li>
+<li><code>justify-content</code> 定义了在当前行上，弹性项目沿主轴如何排布。</li>
+<li><code>align-items</code> 定义了在当前行上，弹性项目沿侧轴默认如何排布。</li>
+<li><code>align-self</code> 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</li>
+</ul>
+<p><strong>方向 (Direction)：</strong><br>弹性容器的<strong>主轴起点 (main start)/ 主轴终点 (main end)</strong> 和<strong>侧轴起点 (cross start)/ 侧轴终点 (cross end)</strong> 描述了弹性项目排布的起点与终点。它们具体取决于弹性容器的主轴与侧轴中，由 writing-mode 确立的方向（从左到右、从右到左，等等）。</p>
+<ul>
+<li><code>order</code> 属性将元素与序号关联起来，以此决定哪些元素先出现。</li>
+<li><code>flex-flow</code> 属性是 <code>flex-direction</code> 和 <code>flex-wrap</code> 属性的简写，决定弹性项目如何排布。</li>
+</ul>
+<p><strong>行 (Line)：</strong><br>根据 <code>flex-wrap</code> 属性，弹性项目可以排布在单个行或者多个行中。此属性控制侧轴的方向和新行排列的方向。</p>
+<p><strong>尺寸 (Dimension)：</strong><br>根据弹性容器的主轴与侧轴，弹性项目的宽和高中，对应主轴的称为<strong>主轴尺寸 (main size)</strong> ，对应侧轴的称为 <strong>侧轴尺寸 (cross size)</strong>。</p>
+<ul>
+<li><code>min-height</code> 与 <code>min-width</code> 属性初始值将为 0。</li>
+<li><code>flex</code> 属性是 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code> 属性的简写，描述弹性项目的整体的伸缩性。</li>
+</ul>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><h4 id="flex-direction-决定主轴的方向-即项目的排列方向"><a href="#flex-direction-决定主轴的方向-即项目的排列方向" class="headerlink" title="flex-direction 决定主轴的方向 (即项目的排列方向)"></a><code>flex-direction</code> 决定主轴的方向 (即项目的排列方向)</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>row</code>（默认值）：主轴为水平方向，起点在左端。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-direction-row.jpg" alt></p>
+<p><code>row-reverse</code>：主轴为水平方向，起点在右端。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-direction-row-reverse.jpg" alt></p>
+<p><code>column</code>：主轴为垂直方向，起点在上沿。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-direction-column.jpg" alt></p>
+<p><code>column-reverse</code>：主轴为垂直方向，起点在下沿。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-direction-column-reverse.jpg" alt></p>
+<h4 id="flex-wrap-决定容器内项目是否可换行"><a href="#flex-wrap-决定容器内项目是否可换行" class="headerlink" title="flex-wrap 决定容器内项目是否可换行"></a><code>flex-wrap</code> 决定容器内项目是否可换行</h4><p>默认情况下，项目都排在主轴线上，使用 flex-wrap 可实现项目的换行。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>nowrap</code>（默认值）：不换行，即当主轴尺寸固定时，当空间不足时，项目尺寸会随之调整而并不会挤到下一行。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-wrap-nowrap.jpg" alt></p>
+<p><code>wrap</code>：项目主轴总尺寸超出容器时换行，第一行在上方。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-wrap-wrap.jpg" alt></p>
+<p><code>wrap-reverse</code>：换行，第一行在下方。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-wrap-wrap-reverse.jpg" alt></p>
+<p><strong><code>flex-flow</code> 则是 <code>flex-direction</code> 和 <code>flex-wrap</code> 的简写形式</strong> </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认值为: <code>row nowrap</code>。功能嘛，能省一行 css 代码，懒人福音？</p>
+<h4 id="justify-content-定义了项目在主轴的对齐方式"><a href="#justify-content-定义了项目在主轴的对齐方式" class="headerlink" title="justify-content 定义了项目在主轴的对齐方式"></a><code>justify-content</code> 定义了项目在主轴的对齐方式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立在主轴为水平方向时测试，即 <code>flex-direction: row;</code> 为前提。</p>
+<p><code>flex-start</code>（默认值）：左对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-justify-content-flex-start.jpg" alt></p>
+<p><code>flex-end</code>：右对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-justify-content-flex-end.jpg" alt></p>
+<p><code>center</code>：居中。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-justify-content-center.jpg" alt></p>
+<p><code>space-between</code>：两端对齐，项目之间的间隔相等，即剩余空间等分成间隙。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-justify-content-space-between.jpg" alt></p>
+<p><code>space-around</code>：每个项目两侧的间隔相等，所以项目之间的间隔比项目与边缘的间隔大一倍。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-justify-content-space-around.jpg" alt></p>
+<h4 id="align-items-定义了项目在侧轴上的对齐方式"><a href="#align-items-定义了项目在侧轴上的对齐方式" class="headerlink" title="align-items 定义了项目在侧轴上的对齐方式"></a><code>align-items</code> 定义了项目在侧轴上的对齐方式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立在主轴为水平方向时测试，即 <code>flex-direction: row;</code> 为前提。</p>
+<p><code>stretch</code>（默认值）：即如果项目未设置高度或者设为 <code>auto</code>，将占满整个容器的高度。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-items-stretch.jpg" alt></p>
+<p><code>flex-start</code>：侧轴的起点对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-items-flex-start.jpg" alt></p>
+<p><code>flex-end</code>：侧轴的终点对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-items-flex-end.jpg" alt></p>
+<p><code>center</code>：侧轴的中点对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-items-center.jpg" alt></p>
+<p><code>baseline</code>: 项目的第一行文字的基线对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-items-baseline.jpg" alt></p>
+<h4 id="align-content-定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用"><a href="#align-content-定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用" class="headerlink" title="align-content 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用"></a><code>align-content</code> 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用</h4><p>当 <code>flex-wrap</code> 设置为 <code>nowrap</code> 的时候，容器仅存在一根轴线，因为项目不会换行，就不会产生多条轴线。而 <code>flex-wrap</code> 设置为 <code>wrap</code> 的时候，容器可能会出现多条轴线，这时候你就需要去设置多条轴线之间的对齐方式了。</p>
+<p>建立在主轴为水平方向时测试，即 <code>flex-direction: row</code>, <code>flex-wrap: wrap</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>stretch</code>（默认值）：从图可以看出有三条轴线 (因为容器宽度有限)，当值为 stretch 时会三条轴线平分容器的垂直方向上的空间 (垂直方向上项目和项目间距被平分)。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-content-stretch.jpg" alt></p>
+<p><code>flex-start</code>：轴线全部在侧轴上的起点对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-content-flex-start.jpg" alt></p>
+<p><code>flex-end</code>：轴线全部在侧轴上的终点对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-content-flex-end.jpg" alt></p>
+<p><code>center</code>：轴线全部在侧轴上的中间对齐。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-content-center.jpg" alt></p>
+<p><code>space-between</code>：轴线两端对齐，之间的间隔相等，即剩余空间等分成间隙。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-content-space-between.jpg" alt></p>
+<p><code>space-around</code>：每个轴线两侧的间隔相等，所以轴线之间的间隔比轴线与边缘的间隔大一倍。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-content-space-around.jpg" alt></p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>有六种属性可运用在项目（item）上：</p>
+<h4 id="order-定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为-0"><a href="#order-定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为-0" class="headerlink" title="order 定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0"></a><code>order</code> 定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: &lt;integer&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-order.jpg" alt></p>
+<p>在 HTML 结构中，虽然 3，4 的 item 排在后面，但是由于分别设置了 order，使之能够排到最前面。</p>
+<h4 id="flex-grow-定义项目的放大比例"><a href="#flex-grow-定义项目的放大比例" class="headerlink" title="flex-grow 定义项目的放大比例"></a><code>flex-grow</code> 定义项目的放大比例</h4><p>默认值为 0，即如果存在剩余空间，也不放大。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: &lt;number&gt;; <span class="comment">/* default 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果所有项目的 <code>flex-grow</code> 属性都为 1，则它们将等分剩余空间。(如果有的话)</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-grow-1.jpg" alt></p>
+<p>如果一个项目的 <code>flex-grow</code> 属性为 2，其他项目都为 1，则前者占据的剩余空间将比其他项多一倍。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-grow-2.jpg" alt></p>
+<h4 id="flex-shrink-定义了项目的缩小比例"><a href="#flex-shrink-定义了项目的缩小比例" class="headerlink" title="flex-shrink 定义了项目的缩小比例"></a><code>flex-shrink</code> 定义了项目的缩小比例</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* default 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认值: 1，即如果空间不足，该项目将缩小，负值对该属性无效。<br>如果所有项目的 <code>flex-shrink</code> 属性都为 1，当空间不足时，都将等比例缩小。如果一个项目的 <code>flex-shrink</code> 属性为 0，其他项目都为 1，则空间不足时，前者不缩小。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-flex-shrink.jpg" alt></p>
+<h4 id="flex-basis-定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间"><a href="#flex-basis-定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间" class="headerlink" title="flex-basis 定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间"></a><code>flex-basis</code> 定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认值：<code>auto</code>，即项目本来的大小, 这时候 <code>item</code> 的宽高取决于 <code>width</code> 或 <code>height</code> 的值。</p>
+<p><strong>当主轴为水平方向的时候，当设置了 <code>flex-basis</code>，项目的宽度设置值会失效</strong>，<code>flex-basis</code> 需要跟 <code>flex-grow</code> 和 <code>flex-shrink</code> 配合使用才能发挥效果。</p>
+<p>当 <code>flex-basis</code> 值为 0 时，是把该项目视为零尺寸的，故即使声明该尺寸为 140px，也并没有什么用。当 <code>flex-basis</code> 值为 auto 时，则跟根据尺寸的设定值 (假如为 100px)，则这 100px 不会纳入剩余空间。</p>
+<h4 id="flex-三个属性的合并写法"><a href="#flex-三个属性的合并写法" class="headerlink" title="flex 三个属性的合并写法"></a><code>flex</code> 三个属性的合并写法</h4><p><code>flex</code> 是 <code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code> 的简写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">'flex-grow'</span>&gt; &lt;<span class="string">'flex-shrink'</span>&gt;? || &lt;<span class="string">'flex-basis'</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>flex</code> 的默认值是以上三个属性值的组合。假设以上三个属性同样取默认值，则 <code>flex</code> 的默认值是 0 1 auto。</p>
+<h4 id="align-self-允许单个项目有与其他项目不一样的对齐方式"><a href="#align-self-允许单个项目有与其他项目不一样的对齐方式" class="headerlink" title="align-self 允许单个项目有与其他项目不一样的对齐方式"></a><code>align-self</code> 允许单个项目有与其他项目不一样的对齐方式</h4><p>单个项目覆盖 <code>align-items</code> 定义的属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认值为 <code>auto</code>，表示继承父元素的 <code>align-items</code> 属性，如果没有父元素，则等同于 <code>stretch</code>。</p>
+<p><img src="https://cask.scotch.io/2015/04/flexbox-align-self.jpg" alt></p>
+<p>这个跟 <code>align-items</code> 属性时一样的，只不过 <code>align-self</code> 是对单个项目生效的，而 <code>align-items</code> 则是对容器下的所有项目生效的。</p>
+<p>参考文档：<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">css-tricks.com</a><br><a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="noopener">scotch.io</a><br>进行整理总结。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/19/考察测验02/" rel="next" title="考察测验（二）">
+                <i class="fa fa-chevron-left"></i> 考察测验（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/26/web前端开发面试知识点整理/" rel="prev" title="web前端开发面试知识点整理">
+                web前端开发面试知识点整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Incisa">
+          <p class="site-author-name" itemprop="name">Incisa</p>
+           
+              <p class="site-description motion-element" itemprop="description">隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/incisa.io" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=49216860" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局"><span class="nav-number">3.</span> <span class="nav-text">布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-direction-决定主轴的方向-即项目的排列方向"><span class="nav-number">3.1.</span> <span class="nav-text">flex-direction 决定主轴的方向 (即项目的排列方向)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-wrap-决定容器内项目是否可换行"><span class="nav-number">3.2.</span> <span class="nav-text">flex-wrap 决定容器内项目是否可换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#justify-content-定义了项目在主轴的对齐方式"><span class="nav-number">3.3.</span> <span class="nav-text">justify-content 定义了项目在主轴的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#align-items-定义了项目在侧轴上的对齐方式"><span class="nav-number">3.4.</span> <span class="nav-text">align-items 定义了项目在侧轴上的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#align-content-定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用"><span class="nav-number">3.5.</span> <span class="nav-text">align-content 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">4.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#order-定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为-0"><span class="nav-number">4.1.</span> <span class="nav-text">order 定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-grow-定义项目的放大比例"><span class="nav-number">4.2.</span> <span class="nav-text">flex-grow 定义项目的放大比例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-shrink-定义了项目的缩小比例"><span class="nav-number">4.3.</span> <span class="nav-text">flex-shrink 定义了项目的缩小比例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-basis-定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间"><span class="nav-number">4.4.</span> <span class="nav-text">flex-basis 定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-三个属性的合并写法"><span class="nav-number">4.5.</span> <span class="nav-text">flex 三个属性的合并写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#align-self-允许单个项目有与其他项目不一样的对齐方式"><span class="nav-number">4.6.</span> <span class="nav-text">align-self 允许单个项目有与其他项目不一样的对齐方式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Incisa</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+</html>

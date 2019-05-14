@@ -1,0 +1,975 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter/css?family=Lato:300,300italic,400,400italic,700,700italic|Architects Daughter:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="其实是某培训机构的考试题，不过真的挺难的，现在也没掌握全。（感谢不愿透露姓名的提供者）   web worker有哪些使用场景？如何在node中使用web worker？ 1234* 高性能，多任务，高耗时操作，可以放进 worker 中执行。* 例：很多模板引擎都是把模板与数据的拼装过程放在worker中执行。* 有不少的第三方库可以用web worker* 原理是利用node的多进程来模拟w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="考察测验（一）">
+<meta property="og:url" content="http://yoursite.com/2017/04/30/考察测验01/index.html">
+<meta property="og:site_name" content="Incisa&#39;s Note">
+<meta property="og:description" content="其实是某培训机构的考试题，不过真的挺难的，现在也没掌握全。（感谢不愿透露姓名的提供者）   web worker有哪些使用场景？如何在node中使用web worker？ 1234* 高性能，多任务，高耗时操作，可以放进 worker 中执行。* 例：很多模板引擎都是把模板与数据的拼装过程放在worker中执行。* 有不少的第三方库可以用web worker* 原理是利用node的多进程来模拟w">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-09T10:12:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="考察测验（一）">
+<meta name="twitter:description" content="其实是某培训机构的考试题，不过真的挺难的，现在也没掌握全。（感谢不愿透露姓名的提供者）   web worker有哪些使用场景？如何在node中使用web worker？ 1234* 高性能，多任务，高耗时操作，可以放进 worker 中执行。* 例：很多模板引擎都是把模板与数据的拼装过程放在worker中执行。* 有不少的第三方库可以用web worker* 原理是利用node的多进程来模拟w">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/30/考察测验01/">
+
+
+
+
+
+  <title> 考察测验（一） | Incisa's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Incisa's Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/考察测验01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Incisa">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Incisa's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                考察测验（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T17:14:53+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>其实是某培训机构的考试题，不过真的挺难的，现在也没掌握全。（<del>感谢不愿透露姓名的提供者</del>）</p>
+</blockquote>
+<ol>
+<li><p>web worker有哪些使用场景？如何在node中使用web worker？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 高性能，多任务，高耗时操作，可以放进 worker 中执行。</span><br><span class="line">* 例：很多模板引擎都是把模板与数据的拼装过程放在worker中执行。</span><br><span class="line">* 有不少的第三方库可以用web worker</span><br><span class="line">* 原理是利用node的多进程来模拟worker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>哪些事情不冒泡，如何解决？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">onfocu/onblur</span><br><span class="line">onerror/onload</span><br><span class="line"></span><br><span class="line">简单回答：用jQuery，有一些能够让这些事件冒泡</span><br><span class="line">原理：检测到相应事件后主动在其祖先元素上触发</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scroll事件不能阻止有什么解决方案？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">给不想滚动的元素一个 overflow: hidden；</span><br><span class="line">可能的问题：加上overlfow: hidden之后滚动位置的状态会丢失</span><br><span class="line">解决思路：在加上这个样式之前记录滚动位置，在恢复可滚动状态之后复原该滚动位置</span><br><span class="line">el.scrollLeft/Top</span><br><span class="line">el.scrollTo(x, y)</span><br><span class="line"></span><br><span class="line">A/B problem</span><br><span class="line">对于此题</span><br><span class="line">A问题：想要某些元素不对滚动事件做相应</span><br><span class="line">B问题：阻止scroll事件</span><br><span class="line"></span><br><span class="line">例2：</span><br><span class="line">A问题：想要得到一个文件名的扩展名？</span><br><span class="line">B问题：如何得到字符串的末尾三个字符？</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>domready事件与load事件有什么区别？其触发事件分别为？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DOMContentLoaded, readystatechange, readyState = 1, 3, 8</span><br><span class="line">load</span><br><span class="line"></span><br><span class="line">domready事件是在dom解析完毕后触发，包含了js的解析和执行</span><br><span class="line">所以我们会把js尽量放在底部</span><br><span class="line">如果即希望js放在head里， 又希望它不影响页面渲染，script有一个async/defer属性，加上这个属性之后。 js的下载不会阻塞页面的render了</span><br><span class="line"></span><br><span class="line">load事件是在页面中所有资源（如图片）都请求完成后触发</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mouseout/over事件有什么需要注意的问题？有什么解决方案？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">鼠标从父元素移到子元素的过程中时，父元素就会触发out事件，子元素会触发over事件</span><br><span class="line">解决方案：在现代浏览器中， 用mouseenter/mouseleave。</span><br><span class="line">在老浏览器中，用jQuery，$el.hover(enterFn, leaveFn).mouseenter(enterFn).mouseleave(leaveFn)</span><br><span class="line">原理是：通过检测event.relatedTarget属性来判断</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为什么说 window.onerror 不是真正的事件？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onerror = function(Error, file, line, col, row)&#123;&#125;</span><br><span class="line">此事件可以用来做错误上报，用ajax把错误的相关信息发送到服务器进行统计分析</span><br><span class="line">因为回调函数不接收事件对象</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>几种事件绑定方式有什么优缺点？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3种事件绑定方式</span><br><span class="line">&lt;a onclick=&quot;return false;&quot;&gt;jd&lt;/a&gt;</span><br><span class="line">el.onclick = function()&#123;this.event&#125;</span><br><span class="line">el.addEventListener(&apos;click&apos;, function(event)&#123;&#125;, true/false)</span><br><span class="line">IE8及以下，el.attachEvent(&apos;click&apos;, function() &#123;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>老版本IE浏览器如何添加事件？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.attachEvent(&apos;click&apos;, function() &#123;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Bookmarklet是什么？可以用来干嘛？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">书签脚本：</span><br><span class="line">以javascript: jscode;的格式给浏览器创建一个书签，点击书签就会在当前打开的页面中执行jscode</span><br><span class="line">也可以把此格式的代码直接放入地址栏回车即执行。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>详述各种表单元素的DOM指针指向。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from</span><br><span class="line">  .method</span><br><span class="line">  .action</span><br><span class="line">  .encode</span><br><span class="line">input</span><br><span class="line">  .form</span><br><span class="line">select</span><br><span class="line">  .options</span><br><span class="line">checkbox</span><br><span class="line">  .checked</span><br><span class="line">radio</span><br><span class="line">  .checked</span><br><span class="line">option</span><br><span class="line">  .selected</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现一个jQuery插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$.fn/prototype.plugin = function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">$.prototype.trioleclieck = function()&#123;</span><br><span class="line">  this是当前被包装的jQuery对象，而不是原生节点</span><br><span class="line">  对于一下代码this即为divs</span><br><span class="line">  this.each(function()&#123;</span><br><span class="line">  this.addEventListener(&apos;tripleclick&apos;, handler)</span><br><span class="line">  &#125;)</span><br><span class="line">  return this</span><br><span class="line">  &lt;!-- handler.call(this[0]) --&gt;</span><br><span class="line">&#125;</span><br><span class="line">$.prototype.a</span><br><span class="line">$.prototype.b</span><br><span class="line">$.prototype.c</span><br><span class="line">$.extend($.prototype, &#123;</span><br><span class="line">  a:fn,</span><br><span class="line">  b:fn2,</span><br><span class="line">  c:fn3,</span><br><span class="line">&#125;)</span><br><span class="line">Object.assign(target,&#123;a:&#123;b:2&#125;&#125;, source2, ...)</span><br><span class="line">_.merge 深合并</span><br><span class="line">深拷贝，浅拷贝</span><br><span class="line"></span><br><span class="line">var divs = $(&apos;div&apos;).triplecleck(function()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>touchend事件有什么坑？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">拿不到touch的点</span><br><span class="line">想要拿到的话只能从拿到最后一次touchmove事件上取得</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更复杂的收拾检测最好是怎么做？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hammer.js</span><br><span class="line">zepyo.js</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单页滚动框架有哪些？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fullpage.js</span><br><span class="line">swiper.js</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移动端更保险的是用什么事件？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">click</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移动端浏览在处理单击事件时为什么会有延迟？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">因为在一次单击发生后还可能发生第二次单击，浏览器并不知道首次单击的意图，只能等待一段时间后是否发生第二次单击</span><br><span class="line">如何消除这个延迟呢？</span><br><span class="line">fastclick.js</span><br><span class="line">hammer.js</span><br><span class="line">  给元素加一个css属性</span><br><span class="line">  或者用touchstart事件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把用户通过inputL:file选择的的图片文件放在img标签种按原始尺寸预览；画入canvas里按照缩小尺寸预览</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; multiplesss&gt;</span><br><span class="line">&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  fileSelect = document.querySelector(&apos;input&apos;)</span><br><span class="line">  imgTag = document.querySelector(&apos;img&apos;)</span><br><span class="line"></span><br><span class="line">  fileSelect.onchange = function() &#123;</span><br><span class="line">    var file = this.files[0]</span><br><span class="line">    imgTag.src = file.path</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何创建自定义事件并调用，另外给出相关文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Creating_and_triggering_events</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何得到光标在文本框中的位置？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">el.selectionStart</span><br><span class="line">el.selectionEnd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是属性描述符？他可以用来干嘛？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">property descriptor</span><br><span class="line">是用于描述一个属性的各项特征的对象</span><br><span class="line">如何获得一个属性的属性描述符？</span><br><span class="line">Object.getOwnPropertyDescriptor(obj, &apos;prop&apos;)</span><br><span class="line">Object.defineProperty(obj, &apos;prop&apos;, &#123;</span><br><span class="line">  value:,</span><br><span class="line">  writeable:,</span><br><span class="line">  enumerable:,</span><br><span class="line">  get:,</span><br><span class="line">  set:,</span><br><span class="line">&#125;)</span><br><span class="line">Object.defineProperties(obj, &#123;</span><br><span class="line">  prop1: &#123;</span><br><span class="line">    value,</span><br><span class="line">    writeable,</span><br><span class="line">    enumerable,</span><br><span class="line">    get,</span><br><span class="line">    set,</span><br><span class="line">  &#125;,</span><br><span class="line">  prop2: &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Object.create(null, &#123;</span><br><span class="line">  a: &#123;</span><br><span class="line">    value: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  b: &#123;</span><br><span class="line">    value: 2</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出不能冒泡的的事件</p>
+</li>
+<li><p>innerHTML跟textContent有什么区别？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">innerHTML 是直接设置元素内部的DOM</span><br><span class="line">textContent 是直接设置元素的字符串内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>select元素如何支持多选？多选时如何取到所有被选中的元素？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;&quot; multiple id=&quot;&quot;&gt;&lt;/select&gt;</span><br><span class="line">select.value</span><br><span class="line">for(optain of select.options)&#123;</span><br><span class="line">  if(optain.selected)&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array.from(select.options)filter(it =&gt; it.selected).map(it =&gt; it.value)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>请列出尽量多的es6的新语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">反引号</span><br><span class="line">  var str = `abc $&#123;expr + `abc`&#125;`</span><br><span class="line">  fn`abcdef$&#123;x&#125;$&#123;y&#125;`</span><br><span class="line"></span><br><span class="line">箭头函数</span><br><span class="line">  var fn = () =&gt; &#123;&#125;</span><br><span class="line">  var fn = _ =&gt; 2</span><br><span class="line">  var that = this</span><br><span class="line">  var fn = _ =&gt; (this === that) </span><br><span class="line"></span><br><span class="line">解构赋值</span><br><span class="line">  var a = 1</span><br><span class="line">  var b = 2</span><br><span class="line"></span><br><span class="line">  var [c, d] = [a, b]</span><br><span class="line">  var &#123;a, b&#125; = &#123;</span><br><span class="line">  a: 1,</span><br><span class="line">  b: 2,</span><br><span class="line">  c: 3</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">形参解构</span><br><span class="line">  function a(&#123;x, y&#125;)&#123;</span><br><span class="line">  console.log(x * y)</span><br><span class="line">  &#125;</span><br><span class="line">  a(&#123;</span><br><span class="line">  x:1,</span><br><span class="line">  y:8,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  function b([x, y])&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  b([1, 2, 3, 4, 5])</span><br><span class="line"></span><br><span class="line">计算属性</span><br><span class="line">  var obj = &#123;</span><br><span class="line">    a: 8,</span><br><span class="line">  &#125;</span><br><span class="line">  obj[x*y] = 9</span><br><span class="line">  var obj = &#123;</span><br><span class="line">    [expr]: 3,</span><br><span class="line">    expr: 5,</span><br><span class="line">    get [a]() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    set [](value) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">restpara 剩余参数</span><br><span class="line">  function(a, b, c, ...args)&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">spread operator 数组展开</span><br><span class="line">  Math.max(...[1,2,3,4,5,6,7,8,9]) === Math.max(1,2,3,4,5,6,7,8,9)</span><br><span class="line"></span><br><span class="line">let</span><br><span class="line">  用let声明的变量不提升，TDZ， temaper Dead Zone</span><br><span class="line">  &#123;</span><br><span class="line">    var a = 8</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    let b =9</span><br><span class="line">    console.log(a * b)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">默认参数</span><br><span class="line">  function f(x = 8, y = 9, z = function()&#123;&#125;)  </span><br><span class="line"></span><br><span class="line">const</span><br><span class="line">  阻止被const声明变量指向其他的值</span><br><span class="line">  const a = expr</span><br><span class="line">  a = xxx //报错</span><br><span class="line"></span><br><span class="line">class</span><br><span class="line">  class A &#123;</span><br><span class="line">    //静态方法</span><br><span class="line">    //挂在A上</span><br><span class="line">    //即A.f</span><br><span class="line">    static f()&#123;</span><br><span class="line">      return 8</span><br><span class="line">    &#125;</span><br><span class="line">    //构造函数体</span><br><span class="line">    //即function A()&#123;&#125;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">      this.x = 9</span><br><span class="line">      this.fn = function()&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //实例方法</span><br><span class="line">    //即A.prototype.methodA</span><br><span class="line">    methodA()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">forof</span><br><span class="line">对象方法简写</span><br><span class="line">对象属性简写</span><br><span class="line"></span><br><span class="line">Map/Set</span><br><span class="line">Symbol</span><br><span class="line">Proxy</span><br><span class="line">gennerator</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简述你对模板引擎的理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">模板+数据 =&gt; 期望的内容</span><br><span class="line">DOM模板</span><br><span class="line">一般是框架接收到被解析完成的DOM节点及数据后就地解析并渲染（in place）</span><br><span class="line">可以使用框架特定的方式绑定/相应事件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何在DOM元素上触发自定义事件</p>
+</li>
+<li><p>实现一个lazyload功能：页面中的图片默认不显示，之只有快要滚动到视口内才加载并显示出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;img data-src=&quot;xx.jpg&quot; width=&quot;400&quot; height=&quot;500&quot;&gt;</span><br><span class="line">不能写src属性，因为浏览器读到后就会立马下载</span><br><span class="line">最后协商witch/height，防止图片加载前后产生的回流（reflow/relayout）（重绘repaint）</span><br><span class="line">el.getBoundingClientRect()//获取能够包裹元素所有矩形块的最小矩形区域</span><br><span class="line">el.getClientRects()//获取组成元素的各个矩形块，一般为内联元素</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写出各个不同类型的dom元素的原生api：普通元素，表单元素等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">el</span><br><span class="line">  .childNodes</span><br><span class="line">  .children</span><br><span class="line">  .first/lastChild</span><br><span class="line">  .first/lastElementChild</span><br><span class="line">  .parentNode/Element</span><br><span class="line">  .insertBefore(child, newChild)</span><br><span class="line">  .appendChild(newChild)</span><br><span class="line">  .get/setAttribute(&apos;attr&apos;, value)</span><br><span class="line">  .addEventListener()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>想要拦截用户的粘贴事件并对粘贴的内容做过滤，应该如何实现？说出思路</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zeroClipboard.js 点击自动粘贴</span><br><span class="line">========</span><br><span class="line">监听粘贴事件发生时读取剪切板数据，preventDefault()</span><br><span class="line">过滤读取到的剪切板内容</span><br><span class="line">使用selectStart/End来替换选中的文本，达到类似于粘贴的效果</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说出css常用的单位有哪些，以及他们的意义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">相对单位</span><br><span class="line">  px =&gt; css像素。一般来说页面，屏幕，等全部一比一的时候一个物理像素就是1px。但是页面放大或者缩小，或者分辨率跟屏幕物理分辨率不同，就不一定是了。</span><br><span class="line">  em =&gt; 字号大小</span><br><span class="line">  rem =&gt; html（根元素）元素的字号大小</span><br><span class="line">  vh/vw =&gt;视口宽高的百分之一，包含滚动条</span><br><span class="line">  ex =&gt; x字符的高度</span><br><span class="line">  ch =&gt; 0字符的宽度</span><br><span class="line">  百分比 </span><br><span class="line"></span><br><span class="line">绝对单位</span><br><span class="line">  cm/pt/in =&gt; 虽然理论上是绝对单位,但是大多数时候都不不符合实际长度。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>polyfill、与shim的区别是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">polyfill</span><br><span class="line">  能够把新的api在老浏览器里完全实现，这个实现就称为polyfill</span><br><span class="line">shim 垫片</span><br><span class="line">  能够让新的api在老的浏览器中不报错，这个实现就称为shim</span><br><span class="line"></span><br><span class="line">  es5-shim</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>详述Node require函数查找模块文件的过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">内置模块，直接返回</span><br><span class="line">如果参数像路径（以点开头），则相对于当前文件所在目录查找</span><br><span class="line">  如果这个路径是一个文件，直接加载文件本身/.js/.json/.node</span><br><span class="line">  如果这个路径是一个文件夹</span><br><span class="line">    如果文件夹内没有package.json</span><br><span class="line">      则加载文件夹内的index.js/json/node</span><br><span class="line">    如果文件夹内有package.json</span><br><span class="line">      则加载json.main字段对应的文件</span><br><span class="line">如果即不像路径，又不是内置模块，则是第三方模块。在当前及祖先文件夹的 node_modules 文件夹内部找与模块名相同的文件夹，再读取package.json。</span><br><span class="line"></span><br><span class="line">https://nodejs.org/dist/latest-v7.x/docs/api/modules.html#modules_all_together</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用npm安装模块时，有无-g的区别在哪里？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">有-g的时候是全局安装</span><br><span class="line">  安装在C:\Users\</span><br><span class="line">  同事，一般来说会安装一个命令行工具</span><br><span class="line">无-g时安装在当前目录的node_modulules文件夹里</span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line">把当前文件夹视作一个node项目</span><br><span class="line">按照语义化版本号要求，安装package.json下的dependences字段下的所有第三方模块</span><br><span class="line">^x.y.z =&gt; x不可动（默认）</span><br><span class="line">~x.y.z =&gt; x, y都不可动</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.71828的二进制形式时多少/（尝试手动转换，二进制同样精确到小数点后5位）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10.101101</span><br><span class="line">0.71828 * 2 </span><br><span class="line">1.xx</span><br><span class="line">小数部分*2取整</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.71828用IEEE754标准使用32位二进制表示时在计算机中的存储是什么样的？给出内<br>存中的二进制形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">10.10110111111000010011001010110101010111101111001</span><br><span class="line">1.010110111111000010011001010110101010111101111001 * 2 ^ 1</span><br><span class="line"></span><br><span class="line">0[10000000]01011011111100001001100</span><br><span class="line">01000000 00101101 11111000 01001100</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算中为什么要便用补码来表示负数？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">补码能够让符号位也参与运算</span><br><span class="line">原理这是同余理论</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简述对数据库系统以下各个概念的理解：数据库，表，主键，外键，事务，脱敏，连<br>接，视图，索引，聚集。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">数据库 - 相当于一个excel文件</span><br><span class="line">表 - 相当于里面的一个sheet</span><br><span class="line">主键 - 表的某一列的值不为空且唯一。也就是说知道主键就可以定位表中的特定的某“一”行</span><br><span class="line">外键 - 表中的某一列的数据来自另一张表（也可以是本表）的主键</span><br><span class="line">事物 - transtation 交易 一手交钱一手交货。数据库西永需要的能够以保证操作的ACID：原子性</span><br><span class="line">脱敏 - </span><br><span class="line">连接 - 将两张表按照制定的规则生成一张新表。</span><br><span class="line">视图 - 虚表由一个选择结果组成的表。</span><br><span class="line">索引 - 可以为某一列或者多列创建索引，使查找更快。索引会占用空间吗同时也需要与表的内容包吃一致，所以每次修改表的内容时，索引也会相应的修改，所以是会花时间的，但其会让查找变得非常快。</span><br><span class="line">聚集 - aggregate</span><br><span class="line">https://www.sqlite.org/lang_aggfunc.html</span><br><span class="line"></span><br><span class="line">sqlite&gt; select * from user;</span><br><span class="line">username    age         gender</span><br><span class="line">----------  ----------  ----------</span><br><span class="line">a           67          1</span><br><span class="line">b           67          0</span><br><span class="line">c           5           1</span><br><span class="line">d           23          1</span><br><span class="line">e           39          0</span><br><span class="line">f           30          1</span><br><span class="line">g           34          0</span><br><span class="line">sqlite&gt; SELECT avg(age), gender from user ;</span><br><span class="line">avg(age)          gender</span><br><span class="line">----------------  ----------</span><br><span class="line">37.8571428571429  0</span><br><span class="line">sqlite&gt; SELECT avg(age), gender from user group by gender;</span><br><span class="line">avg(age)          gender</span><br><span class="line">----------------  ----------</span><br><span class="line">46.6666666666667  0</span><br><span class="line">31.25             1</span><br><span class="line">sqlite&gt; SELECT sum(age), gender from user group by gender;</span><br><span class="line">sum(age)    gender</span><br><span class="line">----------  ----------</span><br><span class="line">140         0</span><br><span class="line">125         1</span><br><span class="line">sqlite&gt; SELECT count(age), gender from user group by gender;</span><br><span class="line">count(age)  gender</span><br><span class="line">----------  ----------</span><br><span class="line">3           0</span><br><span class="line">4           1</span><br><span class="line">sqlite&gt; SELECT count(age), gender from user where gender=1 group by gender;</span><br><span class="line">count(age)  gender</span><br><span class="line">----------  ----------</span><br><span class="line">4           1</span><br><span class="line">sqlite&gt; SELECT count(age) as count, gender from user where gender=1 group by gender;</span><br><span class="line">count       gender</span><br><span class="line">----------  ----------</span><br><span class="line">4           1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Seajs能够在浏览器中异步加载文件但又同步require的原理是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">其实是把所有的依赖都下载好之后才开始执行的</span><br><span class="line">那如何在不执行的情况下就分析好依赖呢？</span><br><span class="line">其实是八行书toString然后用正则匹配出内部的require语句</span><br><span class="line">所以，seajs/requirejs中的require语句中只能写字符串常量</span><br><span class="line">seajs.use(&apos;a/&apos; + &apos;jquery.js&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何编写一个自己的Node模块？其原理是什么？需要注意些什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;)</span><br><span class="line">exports.a = xxx</span><br><span class="line">exports.b = yyy</span><br><span class="line"></span><br><span class="line">moudule.exports = zzz //保险的做法</span><br><span class="line"></span><br><span class="line">exports = 8//错误</span><br><span class="line"></span><br><span class="line">原理就是module其实是外界传入的一个对象，我们的模块只是在修改这个对象，修改完成之后结束了，外界就能改得到被我们修改过的对象。而我们是在一个闭包（我们的代码被主动包裹在一个闭包内执行）里修改的这个对象嘛所以不会产生全局变量污染的问题。</span><br><span class="line"></span><br><span class="line">(function(require, moudule, exports, __dirname, __filename)&#123;</span><br><span class="line">  mycode...</span><br><span class="line">  &#125;)()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.gitignore文件的作用是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">让git忽略对某些文件的主动跟踪</span><br><span class="line">是一个文本文件，一行一个路径</span><br><span class="line">其可以存在于项目中的任何一个文件夹中。可以出现多次，里面的路径都是相对于其所在的文件夹的。</span><br><span class="line"></span><br><span class="line">想要把一个文件夹提交上去，但是又要忽略里面所有文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简述你对多线程的理解，以及其与异步的关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">多线程就是从宏观角度，有多段代码同时执行。</span><br><span class="line">触发了异步任务之后，其实异步的任务就是在另一个线程中执行的。执行完成之后通知主线程（或触发异步任务的线程）。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简述你对事件循环的理解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">浏览器会每隔一段时间去检查任务队列中是否有需要执行的任务，有的话，就执行。</span><br><span class="line">两次事件循环之间大约为4毫秒的间隔。</span><br><span class="line">process.nextTick(fn)把fn放在当次事件循环之后调用，而不是下一次事件循环里面</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简述你对tcp协议及http协议的理解，说解释tcp与http的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">TCP就是字节流协议，连接建立好之后，就可以发送或接收任何字节流。</span><br><span class="line">http是基于TCP的应用层协议</span><br><span class="line">http协议只能按照指定的格式在tcp层发送字节流</span><br><span class="line">================</span><br><span class="line">GET / HTTP / 1.1</span><br><span class="line">Host: www.example.com</span><br><span class="line">----------------</span><br><span class="line">HTTP /1.1 200 OK</span><br><span class="line">Content-Type: text/html; charset=utf8</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>host文件是干嘛用的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">本机DNS，如果某个域名条件会出现在hosts文件中，则不会向DNS服务器询问其IP地址。</span><br><span class="line"></span><br><span class="line">在一些开发中，可以用来做调试用。</span><br><span class="line">a.com -&gt; 1.2.3.4 //a.com的真实ip地址</span><br><span class="line">a.com 127.0.0.1 //写在hosts中的条目</span><br><span class="line">最终访问的的就是127.0.0.1这个ip地址的服务器</span><br><span class="line">然后可以在127.0.0.1上搭一个跟线上一样的服务器，就可以本地调试了。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调度复杂的同步异步混合代码需要注意什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">时序。即哪段代码先执行哪段代码后执行。</span><br><span class="line">解决方案：promise</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cookie是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cookie就是服务器通过http头（Set-Cookie）或者JS通过document.cookie设置的保存到浏览器的一段文本内容，会在浏览器每次发送请求时都通过cookie头带上并发送到服务器。</span><br><span class="line"></span><br><span class="line">标识用户。</span><br><span class="line">一半来说用户登陆之后，服务器就会下发一段加了密的cookie。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JSONP的原理是？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">JSON Padding</span><br><span class="line">用途：合理的跨域访问。</span><br><span class="line"></span><br><span class="line">a.com:</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function jsonp12345(data)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;b.com/data?x=1&amp;y=2&amp;callback=jsonp12345&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">jsonp12345(&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"> --&gt;</span><br><span class="line">&lt;script src=&quot;aaa.com/&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;img src=&quot;xxxx.com&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">不能发POST请求</span><br><span class="line">能不能处理错误</span><br><span class="line">script.onerror</span><br><span class="line"></span><br><span class="line">window.onerror</span><br><span class="line">img.onerror</span><br><span class="line">script.onerror</span><br><span class="line"></span><br><span class="line">能不能处理超时的请求呢？？？</span><br><span class="line">xhr</span><br><span class="line">setTimeout(fn, timeoutDuration)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>作业：<br>实现JSONP请求的超时处理，调用方式如下：<br>jsonp(‘path?querystring&amp;callback=?’, onsuccess, ontimeout)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">url, ansuccess, ontimeout</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> loaded = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">var</span> timeout = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> globalCallbackName = <span class="string">'__jsonp__callback__'</span> + <span class="built_in">Date</span>.now() + <span class="built_in">Math</span>.random()</span><br><span class="line">  <span class="built_in">window</span>.[globalCallbackName] = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!timeout) &#123;</span><br><span class="line">      onsuccess(data)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  url = url + <span class="string">'&amp;callback='</span> + globalCallbackName</span><br><span class="line">  <span class="comment">//path?a=b&amp;c=d&amp;callback=__jsonp__callback__</span></span><br><span class="line">  <span class="keyword">var</span> scripttag = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">  scriptTag.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//加载并执行完成后触发</span></span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(scriptTag)</span><br><span class="line">    <span class="keyword">delete</span> <span class="built_in">window</span>[globalCallbackName]</span><br><span class="line">    loaded = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  scriptTag.src = url</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(scriptTag)</span><br><span class="line"></span><br><span class="line">  setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!loaded) &#123;</span><br><span class="line">      onTimeout()</span><br><span class="line">      timeout = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,<span class="number">5e3</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">__jsonp__callback__(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    name: <span class="string">'xieran'</span>,</span><br><span class="line">    age: <span class="number">30</span>,</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/22/常见两列CSS一边自适应布局/" rel="next" title="常见 CSS 中两列自适应布局">
+                <i class="fa fa-chevron-left"></i> 常见 CSS 中两列自适应布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/02/字面量常识/" rel="prev" title="有关 JavaScript 字面量的知识">
+                有关 JavaScript 字面量的知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Incisa">
+          <p class="site-author-name" itemprop="name">Incisa</p>
+           
+              <p class="site-description motion-element" itemprop="description">隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/incisa.io" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=49216860" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Incisa</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+</html>
