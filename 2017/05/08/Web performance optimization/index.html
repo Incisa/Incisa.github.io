@@ -96,7 +96,7 @@
 <meta name="description" content="一个老生常谈的问题，随着 web 技术的进步，这方面也越来越受重视。   减少HTTP请求 合并请求 css sprite   使用CDN (Content Delivery Network)  6-8, 10,  以域名为单位的同一个服务器 增加浏览器同时请求的资源数量12345678910111213141516171819202122232425262728293031  &amp;lt;html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="性能优化专题">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/Web performance optimization/index.html">
+<meta property="og:url" content="//incisa.github.io/2017/05/08/Web performance optimization/index.html">
 <meta property="og:site_name" content="Incisa&#39;s Note">
 <meta property="og:description" content="一个老生常谈的问题，随着 web 技术的进步，这方面也越来越受重视。   减少HTTP请求 合并请求 css sprite   使用CDN (Content Delivery Network)  6-8, 10,  以域名为单位的同一个服务器 增加浏览器同时请求的资源数量12345678910111213141516171819202122232425262728293031  &amp;lt;html">
 <meta property="og:locale" content="zh-Hans">
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/08/Web performance optimization/">
+  <link rel="canonical" href="//incisa.github.io/2017/05/08/Web performance optimization/">
 
 
 
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/Web performance optimization/">
+    <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/05/08/Web performance optimization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
@@ -404,7 +404,7 @@
 <li>执行线程跟UI线程是同一个线程</li>
 </ul>
 </li>
-<li>JS的代码是有可能操作DOM的<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">'p'</span>).innerHTML = <span class="string">'abc'</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>JS的代码是有可能操作DOM的<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  document.getElementById('p').innerHTML = 'abc'</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
