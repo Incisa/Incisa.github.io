@@ -1,20 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
 
 
 
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
@@ -30,54 +35,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter/css?family=Lato:300,300italic,400,400italic,700,700italic|Architects Daughter:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -86,38 +43,43 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 
 
 
 
 
 
-<meta name="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Incisa&#39;s Note">
-<meta property="og:url" content="//incisa.github.io/index.html">
-<meta property="og:site_name" content="Incisa&#39;s Note">
-<meta property="og:description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Incisa&#39;s Note">
-<meta name="twitter:description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
 
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -129,18 +91,39 @@
 </script>
 
 
+  
 
+
+
+
+  <meta name="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Incisa&#39;s Note">
+<meta property="og:url" content="//incisa.github.io/index.html">
+<meta property="og:site_name" content="Incisa&#39;s Note">
+<meta property="og:description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Incisa&#39;s Note">
+<meta name="twitter:description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+
+
+
+
+
+  
+  
   <link rel="canonical" href="//incisa.github.io/">
 
 
 
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
-
-  <title> Incisa's Note </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>Incisa's Note</title>
   
 
 
@@ -154,21 +137,47 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -178,13 +187,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -192,100 +200,110 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
   
-    <div class="site-search">
-      
-  <div class="popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
 
-
-
-    </div>
   
 </nav>
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -298,13 +316,19 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/07/16/vue-cli 搭架子入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,13 +341,9 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/07/16/vue-cli 搭架子入门/" itemprop="url">
-                  Vue-Cli 脚手架快速搭建笔记
-                </a>
+                
+                <a href="/2017/07/16/vue-cli 搭架子入门/" class="post-title-link" itemprop="url">Vue-Cli 脚手架快速搭建笔记</a>
               
             
           </h1>
@@ -331,6 +351,11 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -338,19 +363,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T20:05:09+08:00">
-                2017-07-16
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-16 20:05:09" itemprop="dateCreated datePublished" datetime="2017-07-16T20:05:09+08:00">2017-07-16</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-08-29 18:59:22" itemprop="dateModified" datetime="2017-08-29T18:59:22+08:00">2017-08-29</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -367,7 +410,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -376,34 +421,44 @@
       
         
           
-          
+            <p>
+              
 搭一遍忘一遍查一遍搭一遍在这里记下来查的时候方便点
 
 vue-cli 作用vue-cli 作为 vue 的脚手架，可以帮助我们在实际开发中自动生成 vue.js 的模板工程。
 vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
 
 安装全局 vue-cli
-1npm 
-          ...
+npm i
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/16/vue-cli 搭架子入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/07/16/vue-cli 搭架子入门/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -417,6 +472,10 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -429,13 +488,19 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/07/14/WebSocket入门知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -448,13 +513,9 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/07/14/WebSocket入门知识/" itemprop="url">
-                  WebSocket 入门知识
-                </a>
+                
+                <a href="/2017/07/14/WebSocket入门知识/" class="post-title-link" itemprop="url">WebSocket 入门知识</a>
               
             
           </h1>
@@ -462,6 +523,11 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -469,19 +535,37 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T14:06:33+08:00">
-                2017-07-14
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-14 14:06:33" itemprop="dateCreated datePublished" datetime="2017-07-14T14:06:33+08:00">2017-07-14</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-08-29 15:49:54" itemprop="dateModified" datetime="2017-08-29T15:49:54+08:00">2017-08-29</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -498,7 +582,9 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -507,28 +593,38 @@ vue-cli 使用方法!!! 前提：需要 vue 和 webpack（不必多说）
       
         
           
-          WebSocket 是伴随 HTML5 出现的一款新技术，他和传统的 HTTP 协议有所不同。（P.S. 我个人认为他仅仅是个协议。也就是说 HTTP 协议没有变化，或者说没关系，但 HTTP 是不支持持久连接的（长连接，循环连接的不算）
+            <p>
+              WebSocket 是伴随 HTML5 出现的一款新技术，他和传统的 HTTP 协议有所不同。（P.S. 我个人认为他仅仅是个协议。也就是说 HTTP 协议没有变化，或者说没关系，但 HTTP 是不支持持久连接的（长连接，循环连接的不算）
 WebSocket 机制WebSocket 是 HTML5 
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/14/WebSocket入门知识/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/07/14/WebSocket入门知识/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -542,6 +638,10 @@ WebSocket 机制WebSocket 是 HTML5
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -554,13 +654,19 @@ WebSocket 机制WebSocket 是 HTML5
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/07/05/Array-like Object/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -573,13 +679,9 @@ WebSocket 机制WebSocket 是 HTML5
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/07/05/Array-like Object/" itemprop="url">
-                  类数组对象（Array-like Object）知识
-                </a>
+                
+                <a href="/2017/07/05/Array-like Object/" class="post-title-link" itemprop="url">类数组对象（Array-like Object）知识</a>
               
             
           </h1>
@@ -587,6 +689,11 @@ WebSocket 机制WebSocket 是 HTML5
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -594,19 +701,37 @@ WebSocket 机制WebSocket 是 HTML5
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T09:04:14+08:00">
-                2017-07-05
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-05 09:04:14" itemprop="dateCreated datePublished" datetime="2017-07-05T09:04:14+08:00">2017-07-05</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-08-06 01:18:50" itemprop="dateModified" datetime="2017-08-06T01:18:50+08:00">2017-08-06</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -623,7 +748,9 @@ WebSocket 机制WebSocket 是 HTML5
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -632,7 +759,8 @@ WebSocket 机制WebSocket 是 HTML5
       
         
           
-          
+            <p>
+              
 又是一个突然发现好像有点懵逼的东西。
 
 定义什么是类数组呢？
@@ -643,26 +771,35 @@ WebSocket 机制WebSocket 是 HTML5
 不具有数组所具有的方法
 
 P.S. 大概就是只要有 length 属性，且它的属性值为 number 
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/Array-like Object/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/07/05/Array-like Object/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -676,6 +813,10 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -688,13 +829,19 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/06/30/计算机网络基础复习02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -707,13 +854,9 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/06/30/计算机网络基础复习02/" itemprop="url">
-                  计算机网络基础详细复习（二）
-                </a>
+                
+                <a href="/2017/06/30/计算机网络基础复习02/" class="post-title-link" itemprop="url">计算机网络基础详细复习（二）</a>
               
             
           </h1>
@@ -721,6 +864,11 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -728,19 +876,37 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T21:46:25+08:00">
-                2017-06-30
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-30 21:46:25" itemprop="dateCreated datePublished" datetime="2017-06-30T21:46:25+08:00">2017-06-30</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-01 00:59:02" itemprop="dateModified" datetime="2017-07-01T00:59:02+08:00">2017-07-01</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -757,7 +923,9 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -766,31 +934,41 @@ P.S. 大概就是只要有 length 属性，且它的属性值为 number
       
         
           
-          
+            <p>
+              
 继续前篇，本期以 http 协议为主。
 
 HTTP 协议HTTP 协议和 TCP/IP 协议族内的其他众协议相同，用于客户端和服务器之间的通信。两台计算机之间使用 HTTP 协议通信时，必定是一端担任客户端角色，另一端担任服务器端角色
 HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求并
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/30/计算机网络基础复习02/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/06/30/计算机网络基础复习02/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -804,6 +982,10 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -816,13 +998,19 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/06/29/计算机网络基础复习01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -835,13 +1023,9 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/06/29/计算机网络基础复习01/" itemprop="url">
-                  计算机网络基础详细复习（一）
-                </a>
+                
+                <a href="/2017/06/29/计算机网络基础复习01/" class="post-title-link" itemprop="url">计算机网络基础详细复习（一）</a>
               
             
           </h1>
@@ -849,6 +1033,11 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -856,19 +1045,37 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:42:54+08:00">
-                2017-06-29
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-29 23:42:54" itemprop="dateCreated datePublished" datetime="2017-06-29T23:42:54+08:00">2017-06-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-01 00:11:30" itemprop="dateModified" datetime="2017-07-01T00:11:30+08:00">2017-07-01</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -885,7 +1092,9 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -894,32 +1103,42 @@ HTTP 协议规定，请求从客户端发出，最后服务器端相应该请求
       
         
           
-          
+            <p>
+              
 起源于一次面试，发现自己关于计算机网络基础内容记忆和理解不够深刻。在此总结一下，依照《图解http》这本书内容为主，强化记忆和理解
 
 网络基础、TCP/IP 协议族
 每台接入互联网的电脑都有一个 IP 地址
 ipv4：互联网协议版本 4（Internet Protocol version 4，IP
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/29/计算机网络基础复习01/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/06/29/计算机网络基础复习01/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -933,6 +1152,10 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -945,13 +1168,19 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/06/20/作用域和闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -964,13 +1193,9 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/06/20/作用域和闭包/" itemprop="url">
-                  作用域和闭包
-                </a>
+                
+                <a href="/2017/06/20/作用域和闭包/" class="post-title-link" itemprop="url">作用域和闭包</a>
               
             
           </h1>
@@ -978,6 +1203,11 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -985,19 +1215,37 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T23:14:12+08:00">
-                2017-06-20
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-20 23:14:12" itemprop="dateCreated datePublished" datetime="2017-06-20T23:14:12+08:00">2017-06-20</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-10 20:45:26" itemprop="dateModified" datetime="2017-07-10T20:45:26+08:00">2017-07-10</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1014,7 +1262,9 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1023,31 +1273,41 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
       
         
           
-          
+            <p>
+              
 作用域，作用域，作用域。坑爹的地方说三遍。（《你所不知道的 JavaScript》 是一本好书哦）
 
 作用域在正式说到作用域之前，先提一下编译原理
 我们尽管通常将 JavaScript 归类为 “动态”、“解释执行”语言，但是它依旧是一门编译语言。在传统的编译语言的流程中，程序中的一段代码通常会经
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/20/作用域和闭包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/06/20/作用域和闭包/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1061,6 +1321,10 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1073,13 +1337,19 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/06/15/移动端触屏事件试验场/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1092,13 +1362,9 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/06/15/移动端触屏事件试验场/" itemprop="url">
-                  移动端触屏事件试验笔记
-                </a>
+                
+                <a href="/2017/06/15/移动端触屏事件试验场/" class="post-title-link" itemprop="url">移动端触屏事件试验笔记</a>
               
             
           </h1>
@@ -1106,6 +1372,11 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1113,19 +1384,37 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T02:07:33+08:00">
-                2017-06-15
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-15 02:07:33" itemprop="dateCreated datePublished" datetime="2017-06-15T02:07:33+08:00">2017-06-15</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-09 17:04:58" itemprop="dateModified" datetime="2017-07-09T17:04:58+08:00">2017-07-09</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1142,7 +1431,9 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1151,30 +1442,40 @@ ipv4：互联网协议版本 4（Internet Protocol version 4，IP
       
         
           
-          
+            <p>
+              
 移动端触控事件和 PC 端鼠标事件放在一起究竟能绽放出什么样的火花？（其实就是乱的一遭都是坑随着浏览器变更还会变化…
 
 PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响应的是鼠标事件，包括 mousedown、mouseup、mousemove 和 click 事件。我们只对这四个事件
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/15/移动端触屏事件试验场/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/06/15/移动端触屏事件试验场/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1188,6 +1489,10 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1200,13 +1505,19 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/06/03/String对象的属性和方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1219,13 +1530,9 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/06/03/String对象的属性和方法/" itemprop="url">
-                  JavaScript 中 String 对象的属性及方法
-                </a>
+                
+                <a href="/2017/06/03/String对象的属性和方法/" class="post-title-link" itemprop="url">JavaScript 中 String 对象的属性及方法</a>
               
             
           </h1>
@@ -1233,6 +1540,11 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1240,19 +1552,37 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-03T19:05:13+08:00">
-                2017-06-03
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-03 19:05:13" itemprop="dateCreated datePublished" datetime="2017-06-03T19:05:13+08:00">2017-06-03</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-11 15:05:42" itemprop="dateModified" datetime="2017-07-11T15:05:42+08:00">2017-07-11</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1269,7 +1599,9 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1278,32 +1610,42 @@ PC 端的鼠标事件PC 网页上的大部分操作都是用鼠标的，即响�
       
         
           
-          
+            <p>
+              
 既然都整理了 Array ，顺便也把 String 的属性和方法也捋一遍吧。
 
 String 全局对象是一个用于字符串或一个字符序列的构造函数。
 属性string.lengthlength 属性表示一个字符串的长度。
-12345678var x = "Mozilla";var empty = ""
-          ...
+var x = "Mozilla";var empty = "";console
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/03/String对象的属性和方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/06/03/String对象的属性和方法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1317,6 +1659,10 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1329,13 +1675,19 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/06/01/Array对象的属性和方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1348,13 +1700,9 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/06/01/Array对象的属性和方法/" itemprop="url">
-                  JavaScript 中 Array 对象的属性及方法
-                </a>
+                
+                <a href="/2017/06/01/Array对象的属性和方法/" class="post-title-link" itemprop="url">JavaScript 中 Array 对象的属性及方法</a>
               
             
           </h1>
@@ -1362,6 +1710,11 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1369,19 +1722,37 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T15:04:31+08:00">
-                2017-06-01
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-01 15:04:31" itemprop="dateCreated datePublished" datetime="2017-06-01T15:04:31+08:00">2017-06-01</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-07-11 00:37:42" itemprop="dateModified" datetime="2017-07-11T00:37:42+08:00">2017-07-11</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1398,7 +1769,9 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1407,31 +1780,41 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
       
         
           
-          
+            <p>
+              
 没想到刷了 lodash 之后，这些属性和方法居然还能忘差不多，面试手写代码的时候心哇哇凉，今天 总结 + 手打 + 朗读 增加记忆。列在博客里面也方便复习，省着下次面试悲剧。
 
 JavaScript 数组对象是一个用于构造数组的全局对象。
-如何创建一个数组？12let arr = []let a
-          ...
+如何创建一个数组？let arr = []let arr
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/01/Array对象的属性和方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/06/01/Array对象的属性和方法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1445,6 +1828,10 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1457,13 +1844,19 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//incisa.github.io/2017/05/26/web前端开发面试知识点整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Incisa">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1476,13 +1869,9 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/05/26/web前端开发面试知识点整理/" itemprop="url">
-                  web前端开发面试知识点整理
-                </a>
+                
+                <a href="/2017/05/26/web前端开发面试知识点整理/" class="post-title-link" itemprop="url">web前端开发面试知识点整理</a>
               
             
           </h1>
@@ -1490,6 +1879,11 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1497,19 +1891,37 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T18:58:09+08:00">
-                2017-05-26
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-26 18:58:09" itemprop="dateCreated datePublished" datetime="2017-05-26T18:58:09+08:00">2017-05-26</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-09-25 16:15:02" itemprop="dateModified" datetime="2017-09-25T16:15:02+08:00">2017-09-25</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1526,7 +1938,9 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1535,30 +1949,40 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
       
         
           
-          JavaScript原型
+            <p>
+              JavaScript原型
 我们创建的每一个函数，都可以有一个 prototype 属性，该属性指向一个对象。这个对象，就是原型。
 
 当我们在创建对象时，可以根据自己的需求，选择性的将一些属性和方法通过 prototype 属性，挂载在原型对象上。而每一个 new 出来的实例，都有一个 proto 属
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/26/web前端开发面试知识点整理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/05/26/web前端开发面试知识点整理/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+      
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1572,6 +1996,10 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1580,15 +2008,12 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
-          
+
           </div>
-          
-
-
           
 
         </div>
@@ -1610,76 +2035,53 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Incisa">
-          <p class="site-author-name" itemprop="name">Incisa</p>
-           
-              <p class="site-description motion-element" itemprop="description">隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。</p>
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Incisa">
+            
+              <p class="site-author-name" itemprop="name">Incisa</p>
+              <div class="site-description motion-element" itemprop="description">隐约雷鸣，阴霾天空，即使天无雨，我亦留此地。</div>
+          </div>
+
           
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/incisa.io" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://music.163.com/#/user/home?id=49216860" target="_blank" title="网易云音乐">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  网易云音乐
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
+      </div>
 
       
 
@@ -1687,6 +2089,7 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
 
     </div>
   </aside>
+  
 
 
         
@@ -1695,30 +2098,39 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Incisa</span>
+
+  
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+
+
 
 
         
+
+
+
+
+
+
+
 
         
       </div>
@@ -1730,12 +2142,17 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
         
       </div>
     
+
+    
+
+    
+
     
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1749,214 +2166,58 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
 
 
 
-  
 
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-
-  
 
 
 
 
-	
+
+
+
+
 
 
 
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
 
 
 
   
 
-
-
   
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
 
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+  <script src="/js/next-boot.js?v=7.1.1"></script>
 
 
   
@@ -1968,9 +2229,39 @@ JavaScript 数组对象是一个用于构造数组的全局对象。
   
 
 
+
   
+
+
+
+
   
-<!-- 背景动画 -->
-<script type="text/javascript" src="/js/src/particle.js"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
